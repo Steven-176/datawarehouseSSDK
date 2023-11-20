@@ -28,6 +28,19 @@ def extract_departements_region():
 
     return df_departements_region
 
+def transform_data():
+    df = extract_donnees_urgences_SOS_medecins()
+    
+    # Liste des colonnes à supprimer    
+    columns_to_drop = ["nbre_acte_corona", "nbre_acte_tot", "nbre_acte_corona_h", "nbre_acte_corona_f", "nbre_acte_tot_h", "nbre_acte_tot_f"]
+    
+    # Suppression des colonnes
+    df = df.drop(columns=columns_to_drop, axis=1)
+    
+    df.to_csv(os.path.expandvars("${AIRFLOW_HOME}/data/test.csv"), sep=";", index=False)
+    
+    return df
+
 default_args = {
     'owner': 'airflow',
     'start_date': datetime(2021, 1, 1), 
@@ -60,6 +73,12 @@ with DAG(
         dag=dag,
     )
     
+    dag_transform_data = PythonOperator(
+        task_id="Transform_data",
+        python_callable = transform_data,
+        dag=dag,
+    )
+    
     # create_table = PostgresOperator(
     #     task_id='create_table',
     #     postgres_conn_id='postgres_connexion',
@@ -70,4 +89,4 @@ with DAG(
     #     task_id='transform_and_load',
     #     python_callable=load_values,
 
-    dag_extract_donnees_urgences_SOS_medecins >> dag_extract_tranche_age_donnee_urgences >> dag_extract_departements_region
+    dag_extract_donnees_urgences_SOS_medecins >> dag_extract_tranche_age_donnee_urgences >> dag_extract_departements_region >> dag_transform_data
