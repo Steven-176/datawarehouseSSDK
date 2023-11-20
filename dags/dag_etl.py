@@ -37,7 +37,7 @@ def transform_data():
     # Suppression des colonnes
     df = df.drop(columns=columns_to_drop, axis=1)
     
-    df.to_csv(os.path.expandvars("${AIRFLOW_HOME}/data/test.csv"), sep=";", index=False)
+    # df.to_csv(os.path.expandvars("${AIRFLOW_HOME}/data/test.csv"), sep=";", index=False)
     
     return df
 
