@@ -1,0 +1,26 @@
+[2023-11-16T13:42:23.663+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: COVID-19.Extract manual__2023-11-16T13:28:11.582308+00:00 [queued]>
+[2023-11-16T13:42:23.669+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: COVID-19.Extract manual__2023-11-16T13:28:11.582308+00:00 [queued]>
+[2023-11-16T13:42:23.669+0000] {taskinstance.py:1361} INFO - Starting attempt 2 of 2
+[2023-11-16T13:42:23.678+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): Extract> on 2023-11-16 13:28:11.582308+00:00
+[2023-11-16T13:42:23.682+0000] {standard_task_runner.py:57} INFO - Started process 292 to run task
+[2023-11-16T13:42:23.684+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'COVID-19', 'Extract', 'manual__2023-11-16T13:28:11.582308+00:00', '--job-id', '4', '--raw', '--subdir', 'DAGS_FOLDER/dag_etl.py', '--cfg-path', '/tmp/tmp0xe5oz0u']
+[2023-11-16T13:42:23.686+0000] {standard_task_runner.py:85} INFO - Job 4: Subtask Extract
+[2023-11-16T13:42:23.716+0000] {task_command.py:416} INFO - Running <TaskInstance: COVID-19.Extract manual__2023-11-16T13:28:11.582308+00:00 [running]> on host 2c27c36f9105
+[2023-11-16T13:42:24.254+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='COVID-19' AIRFLOW_CTX_TASK_ID='Extract' AIRFLOW_CTX_EXECUTION_DATE='2023-11-16T13:28:11.582308+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-11-16T13:28:11.582308+00:00'
+[2023-11-16T13:42:24.735+0000] {python.py:194} INFO - Done. Returned value was:         dep date_de_passage  ... nbre_acte_tot_h nbre_acte_tot_f
+0        01      2022-12-26  ...             NaN             NaN
+1        01      2022-12-26  ...             NaN             NaN
+2        01      2022-12-26  ...             NaN             NaN
+3        01      2022-12-26  ...             NaN             NaN
+4        01      2022-12-26  ...             NaN             NaN
+...     ...             ...  ...             ...             ...
+214216  976      2023-10-24  ...             NaN             NaN
+214217  976      2023-10-24  ...             NaN             NaN
+214218  976      2023-10-24  ...             NaN             NaN
+214219  976      2023-10-24  ...             NaN             NaN
+214220  976      2023-10-24  ...             NaN             NaN
+
+[214221 rows x 18 columns]
+[2023-11-16T13:42:25.004+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=COVID-19, task_id=Extract, execution_date=20231116T132811, start_date=20231116T134223, end_date=20231116T134225
+[2023-11-16T13:42:25.060+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2023-11-16T13:42:25.075+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check

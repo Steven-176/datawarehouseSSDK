@@ -1,0 +1,20 @@
+[2023-11-20T20:51:13.193+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: COVID-19.Extract_des_tranches_age_des_données_urgences manual__2023-11-20T20:51:06.827165+00:00 [queued]>
+[2023-11-20T20:51:13.207+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: COVID-19.Extract_des_tranches_age_des_données_urgences manual__2023-11-20T20:51:06.827165+00:00 [queued]>
+[2023-11-20T20:51:13.209+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 1
+[2023-11-20T20:51:13.229+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): Extract_des_tranches_age_des_données_urgences> on 2023-11-20 20:51:06.827165+00:00
+[2023-11-20T20:51:13.235+0000] {standard_task_runner.py:57} INFO - Started process 257 to run task
+[2023-11-20T20:51:13.239+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'COVID-19', 'Extract_des_tranches_age_des_données_urgences', 'manual__2023-11-20T20:51:06.827165+00:00', '--job-id', '8', '--raw', '--subdir', 'DAGS_FOLDER/dag_etl.py', '--cfg-path', '/tmp/tmpeogooh1t']
+[2023-11-20T20:51:13.241+0000] {standard_task_runner.py:85} INFO - Job 8: Subtask Extract_des_tranches_age_des_données_urgences
+[2023-11-20T20:51:13.312+0000] {task_command.py:416} INFO - Running <TaskInstance: COVID-19.Extract_des_tranches_age_des_données_urgences manual__2023-11-20T20:51:06.827165+00:00 [running]> on host 72711513dbe0
+[2023-11-20T20:51:13.618+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='COVID-19' AIRFLOW_CTX_TASK_ID='Extract_des_tranches_age_des_données_urgences' AIRFLOW_CTX_EXECUTION_DATE='2023-11-20T20:51:06.827165+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-11-20T20:51:06.827165+00:00'
+[2023-11-20T20:51:13.632+0000] {python.py:194} INFO - Done. Returned value was:   Code tranches d'age  Unnamed: 1
+0                   0   tous âges
+1                   1     0-4 ans
+2                   2    5-14 ans
+3                   3   15-44 ans
+4                   4   45-64 ans
+5                   5   65-74 ans
+6                   6  75 et plus
+[2023-11-20T20:51:13.682+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=COVID-19, task_id=Extract_des_tranches_age_des_données_urgences, execution_date=20231120T205106, start_date=20231120T205113, end_date=20231120T205113
+[2023-11-20T20:51:13.734+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2023-11-20T20:51:13.758+0000] {taskinstance.py:2778} INFO - 1 downstream tasks scheduled from follow-on schedule check
