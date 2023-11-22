@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 [2023-11-20T20:36:06.431+0000] {processor.py:157} INFO - Started process (PID=42) to work on /opt/airflow/dags/dag_etl.py
 [2023-11-20T20:36:06.432+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/dag_etl.py for tasks to queue
 [2023-11-20T20:36:06.436+0000] {logging_mixin.py:151} INFO - [2023-11-20T20:36:06.436+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/dag_etl.py
@@ -1640,3 +1641,320 @@
 [2023-11-20T22:45:45.902+0000] {logging_mixin.py:151} INFO - [2023-11-20T22:45:45.900+0000] {dag.py:2941} INFO - Sync 1 DAGs
 [2023-11-20T22:45:45.920+0000] {logging_mixin.py:151} INFO - [2023-11-20T22:45:45.920+0000] {dag.py:3722} INFO - Setting next_dagrun for COVID-19 to None, run_after=None
 [2023-11-20T22:45:45.958+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/dag_etl.py took 0.866 seconds
+=======
+[2023-11-20T22:30:59.666+0000] {processor.py:157} INFO - Started process (PID=38) to work on /opt/airflow/dags/dag_etl.py
+[2023-11-20T22:30:59.667+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/dag_etl.py for tasks to queue
+[2023-11-20T22:30:59.670+0000] {logging_mixin.py:151} INFO - [2023-11-20T22:30:59.670+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/dag_etl.py
+[2023-11-20T22:31:00.299+0000] {processor.py:839} INFO - DAG(s) dict_keys(['COVID-19']) retrieved from /opt/airflow/dags/dag_etl.py
+[2023-11-20T22:31:00.340+0000] {logging_mixin.py:151} INFO - [2023-11-20T22:31:00.340+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2023-11-20T22:31:00.353+0000] {logging_mixin.py:151} INFO - [2023-11-20T22:31:00.353+0000] {dag.py:3722} INFO - Setting next_dagrun for COVID-19 to None, run_after=None
+[2023-11-20T22:31:00.381+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/dag_etl.py took 0.718 seconds
+[2023-11-20T22:31:30.544+0000] {processor.py:157} INFO - Started process (PID=47) to work on /opt/airflow/dags/dag_etl.py
+[2023-11-20T22:31:30.545+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/dag_etl.py for tasks to queue
+[2023-11-20T22:31:30.546+0000] {logging_mixin.py:151} INFO - [2023-11-20T22:31:30.546+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/dag_etl.py
+[2023-11-20T22:31:30.891+0000] {processor.py:839} INFO - DAG(s) dict_keys(['COVID-19']) retrieved from /opt/airflow/dags/dag_etl.py
+[2023-11-20T22:31:30.908+0000] {logging_mixin.py:151} INFO - [2023-11-20T22:31:30.908+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2023-11-20T22:31:30.916+0000] {logging_mixin.py:151} INFO - [2023-11-20T22:31:30.916+0000] {dag.py:3722} INFO - Setting next_dagrun for COVID-19 to None, run_after=None
+[2023-11-20T22:31:30.931+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/dag_etl.py took 0.390 seconds
+[2023-11-20T22:32:01.079+0000] {processor.py:157} INFO - Started process (PID=56) to work on /opt/airflow/dags/dag_etl.py
+[2023-11-20T22:32:01.080+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/dag_etl.py for tasks to queue
+[2023-11-20T22:32:01.082+0000] {logging_mixin.py:151} INFO - [2023-11-20T22:32:01.081+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/dag_etl.py
+[2023-11-20T22:32:01.480+0000] {processor.py:839} INFO - DAG(s) dict_keys(['COVID-19']) retrieved from /opt/airflow/dags/dag_etl.py
+[2023-11-20T22:32:01.498+0000] {logging_mixin.py:151} INFO - [2023-11-20T22:32:01.497+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2023-11-20T22:32:01.507+0000] {logging_mixin.py:151} INFO - [2023-11-20T22:32:01.507+0000] {dag.py:3722} INFO - Setting next_dagrun for COVID-19 to None, run_after=None
+[2023-11-20T22:32:01.523+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/dag_etl.py took 0.446 seconds
+[2023-11-20T22:32:31.690+0000] {processor.py:157} INFO - Started process (PID=65) to work on /opt/airflow/dags/dag_etl.py
+[2023-11-20T22:32:31.691+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/dag_etl.py for tasks to queue
+[2023-11-20T22:32:31.693+0000] {logging_mixin.py:151} INFO - [2023-11-20T22:32:31.692+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/dag_etl.py
+[2023-11-20T22:32:32.017+0000] {processor.py:839} INFO - DAG(s) dict_keys(['COVID-19']) retrieved from /opt/airflow/dags/dag_etl.py
+[2023-11-20T22:32:32.032+0000] {logging_mixin.py:151} INFO - [2023-11-20T22:32:32.031+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2023-11-20T22:32:32.040+0000] {logging_mixin.py:151} INFO - [2023-11-20T22:32:32.039+0000] {dag.py:3722} INFO - Setting next_dagrun for COVID-19 to None, run_after=None
+[2023-11-20T22:32:32.077+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/dag_etl.py took 0.389 seconds
+[2023-11-20T22:33:02.223+0000] {processor.py:157} INFO - Started process (PID=74) to work on /opt/airflow/dags/dag_etl.py
+[2023-11-20T22:33:02.223+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/dag_etl.py for tasks to queue
+[2023-11-20T22:33:02.225+0000] {logging_mixin.py:151} INFO - [2023-11-20T22:33:02.225+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/dag_etl.py
+[2023-11-20T22:33:02.559+0000] {processor.py:839} INFO - DAG(s) dict_keys(['COVID-19']) retrieved from /opt/airflow/dags/dag_etl.py
+[2023-11-20T22:33:02.575+0000] {logging_mixin.py:151} INFO - [2023-11-20T22:33:02.575+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2023-11-20T22:33:02.583+0000] {logging_mixin.py:151} INFO - [2023-11-20T22:33:02.583+0000] {dag.py:3722} INFO - Setting next_dagrun for COVID-19 to None, run_after=None
+[2023-11-20T22:33:02.595+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/dag_etl.py took 0.375 seconds
+[2023-11-20T22:34:59.503+0000] {processor.py:157} INFO - Started process (PID=39) to work on /opt/airflow/dags/dag_etl.py
+[2023-11-20T22:34:59.506+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/dag_etl.py for tasks to queue
+[2023-11-20T22:34:59.511+0000] {logging_mixin.py:151} INFO - [2023-11-20T22:34:59.511+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/dag_etl.py
+[2023-11-20T22:35:01.061+0000] {logging_mixin.py:151} INFO - [2023-11-20T22:35:01.058+0000] {dagbag.py:346} ERROR - Failed to import: /opt/airflow/dags/dag_etl.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 342, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/dag_etl.py", line 78, in <module>
+    python_callable = transform_data(),
+  File "/opt/airflow/dags/dag_etl.py", line 40, in transform_data
+    df.to_csv(os.path.expandvars("${AIRFLOW_HOME}/data/test.csv"), sep=";", index=False)
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+[2023-11-20T22:35:01.062+0000] {processor.py:841} WARNING - No viable dags retrieved from /opt/airflow/dags/dag_etl.py
+[2023-11-20T22:35:01.076+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/dag_etl.py took 1.578 seconds
+[2023-11-20T22:35:31.250+0000] {processor.py:157} INFO - Started process (PID=49) to work on /opt/airflow/dags/dag_etl.py
+[2023-11-20T22:35:31.251+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/dag_etl.py for tasks to queue
+[2023-11-20T22:35:31.254+0000] {logging_mixin.py:151} INFO - [2023-11-20T22:35:31.254+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/dag_etl.py
+[2023-11-20T22:35:31.822+0000] {logging_mixin.py:151} INFO - [2023-11-20T22:35:31.820+0000] {dagbag.py:346} ERROR - Failed to import: /opt/airflow/dags/dag_etl.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 342, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/dag_etl.py", line 78, in <module>
+    python_callable = transform_data(),
+  File "/opt/airflow/dags/dag_etl.py", line 40, in transform_data
+    df.to_csv(os.path.expandvars("${AIRFLOW_HOME}/data/test.csv"), sep=";", index=False)
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+[2023-11-20T22:35:31.823+0000] {processor.py:841} WARNING - No viable dags retrieved from /opt/airflow/dags/dag_etl.py
+[2023-11-20T22:35:31.834+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/dag_etl.py took 0.588 seconds
+[2023-11-20T22:36:01.978+0000] {processor.py:157} INFO - Started process (PID=58) to work on /opt/airflow/dags/dag_etl.py
+[2023-11-20T22:36:01.979+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/dag_etl.py for tasks to queue
+[2023-11-20T22:36:01.980+0000] {logging_mixin.py:151} INFO - [2023-11-20T22:36:01.979+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/dag_etl.py
+[2023-11-20T22:36:02.504+0000] {logging_mixin.py:151} INFO - [2023-11-20T22:36:02.501+0000] {dagbag.py:346} ERROR - Failed to import: /opt/airflow/dags/dag_etl.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 342, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/dag_etl.py", line 78, in <module>
+    python_callable = transform_data(),
+  File "/opt/airflow/dags/dag_etl.py", line 40, in transform_data
+    df.to_csv(os.path.expandvars("${AIRFLOW_HOME}/data/test.csv"), sep=";", index=False)
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+[2023-11-20T22:36:02.506+0000] {processor.py:841} WARNING - No viable dags retrieved from /opt/airflow/dags/dag_etl.py
+[2023-11-20T22:36:02.518+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/dag_etl.py took 0.542 seconds
+[2023-11-20T22:36:03.001+0000] {processor.py:157} INFO - Started process (PID=60) to work on /opt/airflow/dags/dag_etl.py
+[2023-11-20T22:36:03.002+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/dag_etl.py for tasks to queue
+[2023-11-20T22:36:03.003+0000] {logging_mixin.py:151} INFO - [2023-11-20T22:36:03.002+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/dag_etl.py
+[2023-11-20T22:36:03.512+0000] {logging_mixin.py:151} INFO - [2023-11-20T22:36:03.509+0000] {dagbag.py:346} ERROR - Failed to import: /opt/airflow/dags/dag_etl.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 342, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/dag_etl.py", line 78, in <module>
+    python_callable = transform_data(),
+  File "/opt/airflow/dags/dag_etl.py", line 40, in transform_data
+    df.to_csv(os.path.expandvars("${AIRFLOW_HOME}/data/test.csv"), index=False)
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+[2023-11-20T22:36:03.513+0000] {processor.py:841} WARNING - No viable dags retrieved from /opt/airflow/dags/dag_etl.py
+[2023-11-20T22:36:03.526+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/dag_etl.py took 0.527 seconds
+[2023-11-20T22:36:33.687+0000] {processor.py:157} INFO - Started process (PID=70) to work on /opt/airflow/dags/dag_etl.py
+[2023-11-20T22:36:33.687+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/dag_etl.py for tasks to queue
+[2023-11-20T22:36:33.688+0000] {logging_mixin.py:151} INFO - [2023-11-20T22:36:33.688+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/dag_etl.py
+[2023-11-20T22:36:34.273+0000] {logging_mixin.py:151} INFO - [2023-11-20T22:36:34.270+0000] {dagbag.py:346} ERROR - Failed to import: /opt/airflow/dags/dag_etl.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 342, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/dag_etl.py", line 78, in <module>
+    python_callable = transform_data(),
+  File "/opt/airflow/dags/dag_etl.py", line 40, in transform_data
+    df.to_csv(os.path.expandvars("${AIRFLOW_HOME}/data/test.csv"), index=False)
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+[2023-11-20T22:36:34.274+0000] {processor.py:841} WARNING - No viable dags retrieved from /opt/airflow/dags/dag_etl.py
+[2023-11-20T22:36:34.285+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/dag_etl.py took 0.601 seconds
+[2023-11-20T22:36:58.252+0000] {processor.py:157} INFO - Started process (PID=79) to work on /opt/airflow/dags/dag_etl.py
+[2023-11-20T22:36:58.253+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/dag_etl.py for tasks to queue
+[2023-11-20T22:36:58.253+0000] {logging_mixin.py:151} INFO - [2023-11-20T22:36:58.253+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/dag_etl.py
+[2023-11-20T22:36:59.259+0000] {logging_mixin.py:151} INFO - [2023-11-20T22:36:59.254+0000] {dagbag.py:346} ERROR - Failed to import: /opt/airflow/dags/dag_etl.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 342, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/dag_etl.py", line 76, in <module>
+    dag_transform_data = PythonOperator(
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/baseoperator.py", line 437, in apply_defaults
+    result = func(self, **kwargs, default_args=default_args)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 179, in __init__
+    raise AirflowException("`python_callable` param must be callable")
+airflow.exceptions.AirflowException: `python_callable` param must be callable
+[2023-11-20T22:36:59.263+0000] {processor.py:841} WARNING - No viable dags retrieved from /opt/airflow/dags/dag_etl.py
+[2023-11-20T22:36:59.282+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/dag_etl.py took 1.032 seconds
+[2023-11-20T22:37:26.403+0000] {processor.py:157} INFO - Started process (PID=88) to work on /opt/airflow/dags/dag_etl.py
+[2023-11-20T22:37:26.404+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/dag_etl.py for tasks to queue
+[2023-11-20T22:37:26.405+0000] {logging_mixin.py:151} INFO - [2023-11-20T22:37:26.405+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/dag_etl.py
+[2023-11-20T22:37:26.764+0000] {processor.py:839} INFO - DAG(s) dict_keys(['COVID-19']) retrieved from /opt/airflow/dags/dag_etl.py
+[2023-11-20T22:37:26.896+0000] {logging_mixin.py:151} INFO - [2023-11-20T22:37:26.896+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2023-11-20T22:37:26.906+0000] {logging_mixin.py:151} INFO - [2023-11-20T22:37:26.905+0000] {dag.py:3722} INFO - Setting next_dagrun for COVID-19 to None, run_after=None
+[2023-11-20T22:37:26.923+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/dag_etl.py took 0.522 seconds
+[2023-11-20T22:37:27.419+0000] {processor.py:157} INFO - Started process (PID=90) to work on /opt/airflow/dags/dag_etl.py
+[2023-11-20T22:37:27.420+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/dag_etl.py for tasks to queue
+[2023-11-20T22:37:27.420+0000] {logging_mixin.py:151} INFO - [2023-11-20T22:37:27.420+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/dag_etl.py
+[2023-11-20T22:37:27.765+0000] {processor.py:839} INFO - DAG(s) dict_keys(['COVID-19']) retrieved from /opt/airflow/dags/dag_etl.py
+[2023-11-20T22:37:27.773+0000] {logging_mixin.py:151} INFO - [2023-11-20T22:37:27.773+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2023-11-20T22:37:27.781+0000] {logging_mixin.py:151} INFO - [2023-11-20T22:37:27.781+0000] {dag.py:3722} INFO - Setting next_dagrun for COVID-19 to None, run_after=None
+[2023-11-20T22:37:27.795+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/dag_etl.py took 0.378 seconds
+[2023-11-20T22:37:57.983+0000] {processor.py:157} INFO - Started process (PID=99) to work on /opt/airflow/dags/dag_etl.py
+[2023-11-20T22:37:57.985+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/dag_etl.py for tasks to queue
+[2023-11-20T22:37:57.987+0000] {logging_mixin.py:151} INFO - [2023-11-20T22:37:57.986+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/dag_etl.py
+[2023-11-20T22:37:58.417+0000] {processor.py:839} INFO - DAG(s) dict_keys(['COVID-19']) retrieved from /opt/airflow/dags/dag_etl.py
+[2023-11-20T22:37:58.434+0000] {logging_mixin.py:151} INFO - [2023-11-20T22:37:58.434+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2023-11-20T22:37:58.444+0000] {logging_mixin.py:151} INFO - [2023-11-20T22:37:58.444+0000] {dag.py:3722} INFO - Setting next_dagrun for COVID-19 to None, run_after=None
+[2023-11-20T22:37:58.458+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/dag_etl.py took 0.480 seconds
+[2023-11-20T22:38:28.622+0000] {processor.py:157} INFO - Started process (PID=108) to work on /opt/airflow/dags/dag_etl.py
+[2023-11-20T22:38:28.622+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/dag_etl.py for tasks to queue
+[2023-11-20T22:38:28.623+0000] {logging_mixin.py:151} INFO - [2023-11-20T22:38:28.623+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/dag_etl.py
+[2023-11-20T22:38:29.009+0000] {processor.py:839} INFO - DAG(s) dict_keys(['COVID-19']) retrieved from /opt/airflow/dags/dag_etl.py
+[2023-11-20T22:38:29.024+0000] {logging_mixin.py:151} INFO - [2023-11-20T22:38:29.024+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2023-11-20T22:38:29.032+0000] {logging_mixin.py:151} INFO - [2023-11-20T22:38:29.032+0000] {dag.py:3722} INFO - Setting next_dagrun for COVID-19 to None, run_after=None
+[2023-11-20T22:38:29.045+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/dag_etl.py took 0.425 seconds
+[2023-11-20T22:38:31.650+0000] {processor.py:157} INFO - Started process (PID=110) to work on /opt/airflow/dags/dag_etl.py
+[2023-11-20T22:38:31.650+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/dag_etl.py for tasks to queue
+[2023-11-20T22:38:31.651+0000] {logging_mixin.py:151} INFO - [2023-11-20T22:38:31.651+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/dag_etl.py
+[2023-11-20T22:38:32.002+0000] {processor.py:839} INFO - DAG(s) dict_keys(['COVID-19']) retrieved from /opt/airflow/dags/dag_etl.py
+[2023-11-20T22:38:32.018+0000] {logging_mixin.py:151} INFO - [2023-11-20T22:38:32.017+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2023-11-20T22:38:32.027+0000] {logging_mixin.py:151} INFO - [2023-11-20T22:38:32.027+0000] {dag.py:3722} INFO - Setting next_dagrun for COVID-19 to None, run_after=None
+[2023-11-20T22:38:32.044+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/dag_etl.py took 0.396 seconds
+[2023-11-20T22:39:02.199+0000] {processor.py:157} INFO - Started process (PID=119) to work on /opt/airflow/dags/dag_etl.py
+[2023-11-20T22:39:02.200+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/dag_etl.py for tasks to queue
+[2023-11-20T22:39:02.200+0000] {logging_mixin.py:151} INFO - [2023-11-20T22:39:02.200+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/dag_etl.py
+[2023-11-20T22:39:02.605+0000] {processor.py:839} INFO - DAG(s) dict_keys(['COVID-19']) retrieved from /opt/airflow/dags/dag_etl.py
+[2023-11-20T22:39:02.622+0000] {logging_mixin.py:151} INFO - [2023-11-20T22:39:02.621+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2023-11-20T22:39:02.630+0000] {logging_mixin.py:151} INFO - [2023-11-20T22:39:02.630+0000] {dag.py:3722} INFO - Setting next_dagrun for COVID-19 to None, run_after=None
+[2023-11-20T22:39:02.645+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/dag_etl.py took 0.448 seconds
+[2023-11-20T22:39:27.317+0000] {processor.py:157} INFO - Started process (PID=128) to work on /opt/airflow/dags/dag_etl.py
+[2023-11-20T22:39:27.318+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/dag_etl.py for tasks to queue
+[2023-11-20T22:39:27.318+0000] {logging_mixin.py:151} INFO - [2023-11-20T22:39:27.318+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/dag_etl.py
+[2023-11-20T22:39:27.662+0000] {processor.py:839} INFO - DAG(s) dict_keys(['COVID-19']) retrieved from /opt/airflow/dags/dag_etl.py
+[2023-11-20T22:39:27.678+0000] {logging_mixin.py:151} INFO - [2023-11-20T22:39:27.677+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2023-11-20T22:39:27.686+0000] {logging_mixin.py:151} INFO - [2023-11-20T22:39:27.686+0000] {dag.py:3722} INFO - Setting next_dagrun for COVID-19 to None, run_after=None
+[2023-11-20T22:39:27.704+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/dag_etl.py took 0.389 seconds
+[2023-11-20T22:39:57.858+0000] {processor.py:157} INFO - Started process (PID=137) to work on /opt/airflow/dags/dag_etl.py
+[2023-11-20T22:39:57.860+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/dag_etl.py for tasks to queue
+[2023-11-20T22:39:57.861+0000] {logging_mixin.py:151} INFO - [2023-11-20T22:39:57.860+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/dag_etl.py
+[2023-11-20T22:39:58.249+0000] {processor.py:839} INFO - DAG(s) dict_keys(['COVID-19']) retrieved from /opt/airflow/dags/dag_etl.py
+[2023-11-20T22:39:58.266+0000] {logging_mixin.py:151} INFO - [2023-11-20T22:39:58.265+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2023-11-20T22:39:58.275+0000] {logging_mixin.py:151} INFO - [2023-11-20T22:39:58.274+0000] {dag.py:3722} INFO - Setting next_dagrun for COVID-19 to None, run_after=None
+[2023-11-20T22:39:58.292+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/dag_etl.py took 0.436 seconds
+[2023-11-20T22:40:28.455+0000] {processor.py:157} INFO - Started process (PID=146) to work on /opt/airflow/dags/dag_etl.py
+[2023-11-20T22:40:28.456+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/dag_etl.py for tasks to queue
+[2023-11-20T22:40:28.457+0000] {logging_mixin.py:151} INFO - [2023-11-20T22:40:28.457+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/dag_etl.py
+[2023-11-20T22:40:28.882+0000] {processor.py:839} INFO - DAG(s) dict_keys(['COVID-19']) retrieved from /opt/airflow/dags/dag_etl.py
+[2023-11-20T22:40:28.898+0000] {logging_mixin.py:151} INFO - [2023-11-20T22:40:28.898+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2023-11-20T22:40:28.906+0000] {logging_mixin.py:151} INFO - [2023-11-20T22:40:28.906+0000] {dag.py:3722} INFO - Setting next_dagrun for COVID-19 to None, run_after=None
+[2023-11-20T22:40:28.918+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/dag_etl.py took 0.466 seconds
+[2023-11-20T22:40:59.069+0000] {processor.py:157} INFO - Started process (PID=155) to work on /opt/airflow/dags/dag_etl.py
+[2023-11-20T22:40:59.069+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/dag_etl.py for tasks to queue
+[2023-11-20T22:40:59.070+0000] {logging_mixin.py:151} INFO - [2023-11-20T22:40:59.070+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/dag_etl.py
+[2023-11-20T22:40:59.425+0000] {processor.py:839} INFO - DAG(s) dict_keys(['COVID-19']) retrieved from /opt/airflow/dags/dag_etl.py
+[2023-11-20T22:40:59.440+0000] {logging_mixin.py:151} INFO - [2023-11-20T22:40:59.439+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2023-11-20T22:40:59.449+0000] {logging_mixin.py:151} INFO - [2023-11-20T22:40:59.449+0000] {dag.py:3722} INFO - Setting next_dagrun for COVID-19 to None, run_after=None
+[2023-11-20T22:40:59.463+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/dag_etl.py took 0.397 seconds
+[2023-11-20T22:41:29.619+0000] {processor.py:157} INFO - Started process (PID=164) to work on /opt/airflow/dags/dag_etl.py
+[2023-11-20T22:41:29.619+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/dag_etl.py for tasks to queue
+[2023-11-20T22:41:29.620+0000] {logging_mixin.py:151} INFO - [2023-11-20T22:41:29.620+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/dag_etl.py
+[2023-11-20T22:41:29.949+0000] {processor.py:839} INFO - DAG(s) dict_keys(['COVID-19']) retrieved from /opt/airflow/dags/dag_etl.py
+[2023-11-20T22:41:29.964+0000] {logging_mixin.py:151} INFO - [2023-11-20T22:41:29.964+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2023-11-20T22:41:29.974+0000] {logging_mixin.py:151} INFO - [2023-11-20T22:41:29.974+0000] {dag.py:3722} INFO - Setting next_dagrun for COVID-19 to None, run_after=None
+[2023-11-20T22:41:29.986+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/dag_etl.py took 0.369 seconds
+[2023-11-20T22:42:00.135+0000] {processor.py:157} INFO - Started process (PID=173) to work on /opt/airflow/dags/dag_etl.py
+[2023-11-20T22:42:00.136+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/dag_etl.py for tasks to queue
+[2023-11-20T22:42:00.137+0000] {logging_mixin.py:151} INFO - [2023-11-20T22:42:00.136+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/dag_etl.py
+[2023-11-20T22:42:00.481+0000] {processor.py:839} INFO - DAG(s) dict_keys(['COVID-19']) retrieved from /opt/airflow/dags/dag_etl.py
+[2023-11-20T22:42:00.496+0000] {logging_mixin.py:151} INFO - [2023-11-20T22:42:00.495+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2023-11-20T22:42:00.504+0000] {logging_mixin.py:151} INFO - [2023-11-20T22:42:00.503+0000] {dag.py:3722} INFO - Setting next_dagrun for COVID-19 to None, run_after=None
+[2023-11-20T22:42:00.519+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/dag_etl.py took 0.386 seconds
+[2023-11-20T22:42:30.668+0000] {processor.py:157} INFO - Started process (PID=182) to work on /opt/airflow/dags/dag_etl.py
+[2023-11-20T22:42:30.669+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/dag_etl.py for tasks to queue
+[2023-11-20T22:42:30.670+0000] {logging_mixin.py:151} INFO - [2023-11-20T22:42:30.670+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/dag_etl.py
+[2023-11-20T22:42:31.006+0000] {processor.py:839} INFO - DAG(s) dict_keys(['COVID-19']) retrieved from /opt/airflow/dags/dag_etl.py
+[2023-11-20T22:42:31.021+0000] {logging_mixin.py:151} INFO - [2023-11-20T22:42:31.020+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2023-11-20T22:42:31.028+0000] {logging_mixin.py:151} INFO - [2023-11-20T22:42:31.028+0000] {dag.py:3722} INFO - Setting next_dagrun for COVID-19 to None, run_after=None
+[2023-11-20T22:42:31.042+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/dag_etl.py took 0.375 seconds
+[2023-11-20T22:43:01.195+0000] {processor.py:157} INFO - Started process (PID=191) to work on /opt/airflow/dags/dag_etl.py
+[2023-11-20T22:43:01.196+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/dag_etl.py for tasks to queue
+[2023-11-20T22:43:01.196+0000] {logging_mixin.py:151} INFO - [2023-11-20T22:43:01.196+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/dag_etl.py
+[2023-11-20T22:43:01.540+0000] {processor.py:839} INFO - DAG(s) dict_keys(['COVID-19']) retrieved from /opt/airflow/dags/dag_etl.py
+[2023-11-20T22:43:01.555+0000] {logging_mixin.py:151} INFO - [2023-11-20T22:43:01.555+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2023-11-20T22:43:01.563+0000] {logging_mixin.py:151} INFO - [2023-11-20T22:43:01.563+0000] {dag.py:3722} INFO - Setting next_dagrun for COVID-19 to None, run_after=None
+[2023-11-20T22:43:01.579+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/dag_etl.py took 0.386 seconds
+[2023-11-20T22:43:31.728+0000] {processor.py:157} INFO - Started process (PID=200) to work on /opt/airflow/dags/dag_etl.py
+[2023-11-20T22:43:31.729+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/dag_etl.py for tasks to queue
+[2023-11-20T22:43:31.730+0000] {logging_mixin.py:151} INFO - [2023-11-20T22:43:31.730+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/dag_etl.py
+[2023-11-20T22:43:32.076+0000] {processor.py:839} INFO - DAG(s) dict_keys(['COVID-19']) retrieved from /opt/airflow/dags/dag_etl.py
+[2023-11-20T22:43:32.092+0000] {logging_mixin.py:151} INFO - [2023-11-20T22:43:32.091+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2023-11-20T22:43:32.100+0000] {logging_mixin.py:151} INFO - [2023-11-20T22:43:32.100+0000] {dag.py:3722} INFO - Setting next_dagrun for COVID-19 to None, run_after=None
+[2023-11-20T22:43:32.114+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/dag_etl.py took 0.388 seconds
+[2023-11-20T22:44:02.265+0000] {processor.py:157} INFO - Started process (PID=209) to work on /opt/airflow/dags/dag_etl.py
+[2023-11-20T22:44:02.266+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/dag_etl.py for tasks to queue
+[2023-11-20T22:44:02.267+0000] {logging_mixin.py:151} INFO - [2023-11-20T22:44:02.267+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/dag_etl.py
+[2023-11-20T22:44:02.596+0000] {processor.py:839} INFO - DAG(s) dict_keys(['COVID-19']) retrieved from /opt/airflow/dags/dag_etl.py
+[2023-11-20T22:44:02.612+0000] {logging_mixin.py:151} INFO - [2023-11-20T22:44:02.611+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2023-11-20T22:44:02.620+0000] {logging_mixin.py:151} INFO - [2023-11-20T22:44:02.620+0000] {dag.py:3722} INFO - Setting next_dagrun for COVID-19 to None, run_after=None
+[2023-11-20T22:44:02.635+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/dag_etl.py took 0.371 seconds
+[2023-11-20T22:44:32.786+0000] {processor.py:157} INFO - Started process (PID=218) to work on /opt/airflow/dags/dag_etl.py
+[2023-11-20T22:44:32.787+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/dag_etl.py for tasks to queue
+[2023-11-20T22:44:32.788+0000] {logging_mixin.py:151} INFO - [2023-11-20T22:44:32.787+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/dag_etl.py
+[2023-11-20T22:44:33.176+0000] {processor.py:839} INFO - DAG(s) dict_keys(['COVID-19']) retrieved from /opt/airflow/dags/dag_etl.py
+[2023-11-20T22:44:33.193+0000] {logging_mixin.py:151} INFO - [2023-11-20T22:44:33.192+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2023-11-20T22:44:33.202+0000] {logging_mixin.py:151} INFO - [2023-11-20T22:44:33.202+0000] {dag.py:3722} INFO - Setting next_dagrun for COVID-19 to None, run_after=None
+[2023-11-20T22:44:33.219+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/dag_etl.py took 0.436 seconds
+[2023-11-20T22:45:03.381+0000] {processor.py:157} INFO - Started process (PID=227) to work on /opt/airflow/dags/dag_etl.py
+[2023-11-20T22:45:03.382+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/dag_etl.py for tasks to queue
+[2023-11-20T22:45:03.382+0000] {logging_mixin.py:151} INFO - [2023-11-20T22:45:03.382+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/dag_etl.py
+[2023-11-20T22:45:03.743+0000] {processor.py:839} INFO - DAG(s) dict_keys(['COVID-19']) retrieved from /opt/airflow/dags/dag_etl.py
+[2023-11-20T22:45:03.761+0000] {logging_mixin.py:151} INFO - [2023-11-20T22:45:03.760+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2023-11-20T22:45:03.769+0000] {logging_mixin.py:151} INFO - [2023-11-20T22:45:03.769+0000] {dag.py:3722} INFO - Setting next_dagrun for COVID-19 to None, run_after=None
+[2023-11-20T22:45:03.785+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/dag_etl.py took 0.406 seconds
+[2023-11-20T22:45:33.958+0000] {processor.py:157} INFO - Started process (PID=236) to work on /opt/airflow/dags/dag_etl.py
+[2023-11-20T22:45:33.959+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/dag_etl.py for tasks to queue
+[2023-11-20T22:45:33.960+0000] {logging_mixin.py:151} INFO - [2023-11-20T22:45:33.960+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/dag_etl.py
+[2023-11-20T22:45:34.313+0000] {processor.py:839} INFO - DAG(s) dict_keys(['COVID-19']) retrieved from /opt/airflow/dags/dag_etl.py
+[2023-11-20T22:45:34.329+0000] {logging_mixin.py:151} INFO - [2023-11-20T22:45:34.328+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2023-11-20T22:45:34.337+0000] {logging_mixin.py:151} INFO - [2023-11-20T22:45:34.336+0000] {dag.py:3722} INFO - Setting next_dagrun for COVID-19 to None, run_after=None
+[2023-11-20T22:45:34.352+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/dag_etl.py took 0.396 seconds
+[2023-11-20T22:46:04.505+0000] {processor.py:157} INFO - Started process (PID=245) to work on /opt/airflow/dags/dag_etl.py
+[2023-11-20T22:46:04.506+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/dag_etl.py for tasks to queue
+[2023-11-20T22:46:04.506+0000] {logging_mixin.py:151} INFO - [2023-11-20T22:46:04.506+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/dag_etl.py
+[2023-11-20T22:46:04.833+0000] {processor.py:839} INFO - DAG(s) dict_keys(['COVID-19']) retrieved from /opt/airflow/dags/dag_etl.py
+[2023-11-20T22:46:04.848+0000] {logging_mixin.py:151} INFO - [2023-11-20T22:46:04.848+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2023-11-20T22:46:04.855+0000] {logging_mixin.py:151} INFO - [2023-11-20T22:46:04.855+0000] {dag.py:3722} INFO - Setting next_dagrun for COVID-19 to None, run_after=None
+[2023-11-20T22:46:04.867+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/dag_etl.py took 0.365 seconds
+[2023-11-20T22:46:35.017+0000] {processor.py:157} INFO - Started process (PID=254) to work on /opt/airflow/dags/dag_etl.py
+[2023-11-20T22:46:35.018+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/dag_etl.py for tasks to queue
+[2023-11-20T22:46:35.019+0000] {logging_mixin.py:151} INFO - [2023-11-20T22:46:35.019+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/dag_etl.py
+[2023-11-20T22:46:35.343+0000] {processor.py:839} INFO - DAG(s) dict_keys(['COVID-19']) retrieved from /opt/airflow/dags/dag_etl.py
+[2023-11-20T22:46:35.359+0000] {logging_mixin.py:151} INFO - [2023-11-20T22:46:35.358+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2023-11-20T22:46:35.366+0000] {logging_mixin.py:151} INFO - [2023-11-20T22:46:35.366+0000] {dag.py:3722} INFO - Setting next_dagrun for COVID-19 to None, run_after=None
+[2023-11-20T22:46:35.379+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/dag_etl.py took 0.363 seconds
+[2023-11-20T22:47:05.533+0000] {processor.py:157} INFO - Started process (PID=263) to work on /opt/airflow/dags/dag_etl.py
+[2023-11-20T22:47:05.534+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/dag_etl.py for tasks to queue
+[2023-11-20T22:47:05.535+0000] {logging_mixin.py:151} INFO - [2023-11-20T22:47:05.534+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/dag_etl.py
+[2023-11-20T22:47:05.859+0000] {processor.py:839} INFO - DAG(s) dict_keys(['COVID-19']) retrieved from /opt/airflow/dags/dag_etl.py
+[2023-11-20T22:47:05.874+0000] {logging_mixin.py:151} INFO - [2023-11-20T22:47:05.874+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2023-11-20T22:47:05.883+0000] {logging_mixin.py:151} INFO - [2023-11-20T22:47:05.883+0000] {dag.py:3722} INFO - Setting next_dagrun for COVID-19 to None, run_after=None
+[2023-11-20T22:47:05.896+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/dag_etl.py took 0.365 seconds
+[2023-11-20T22:47:36.045+0000] {processor.py:157} INFO - Started process (PID=272) to work on /opt/airflow/dags/dag_etl.py
+[2023-11-20T22:47:36.046+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/dag_etl.py for tasks to queue
+[2023-11-20T22:47:36.047+0000] {logging_mixin.py:151} INFO - [2023-11-20T22:47:36.047+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/dag_etl.py
+[2023-11-20T22:47:36.378+0000] {processor.py:839} INFO - DAG(s) dict_keys(['COVID-19']) retrieved from /opt/airflow/dags/dag_etl.py
+[2023-11-20T22:47:36.393+0000] {logging_mixin.py:151} INFO - [2023-11-20T22:47:36.393+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2023-11-20T22:47:36.401+0000] {logging_mixin.py:151} INFO - [2023-11-20T22:47:36.401+0000] {dag.py:3722} INFO - Setting next_dagrun for COVID-19 to None, run_after=None
+[2023-11-20T22:47:36.414+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/dag_etl.py took 0.371 seconds
+[2023-11-20T22:48:06.566+0000] {processor.py:157} INFO - Started process (PID=281) to work on /opt/airflow/dags/dag_etl.py
+[2023-11-20T22:48:06.567+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/dag_etl.py for tasks to queue
+[2023-11-20T22:48:06.568+0000] {logging_mixin.py:151} INFO - [2023-11-20T22:48:06.568+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/dag_etl.py
+[2023-11-20T22:48:06.897+0000] {processor.py:839} INFO - DAG(s) dict_keys(['COVID-19']) retrieved from /opt/airflow/dags/dag_etl.py
+[2023-11-20T22:48:06.913+0000] {logging_mixin.py:151} INFO - [2023-11-20T22:48:06.913+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2023-11-20T22:48:06.921+0000] {logging_mixin.py:151} INFO - [2023-11-20T22:48:06.921+0000] {dag.py:3722} INFO - Setting next_dagrun for COVID-19 to None, run_after=None
+[2023-11-20T22:48:06.933+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/dag_etl.py took 0.369 seconds
+[2023-11-20T22:48:37.090+0000] {processor.py:157} INFO - Started process (PID=290) to work on /opt/airflow/dags/dag_etl.py
+[2023-11-20T22:48:37.091+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/dag_etl.py for tasks to queue
+[2023-11-20T22:48:37.092+0000] {logging_mixin.py:151} INFO - [2023-11-20T22:48:37.092+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/dag_etl.py
+[2023-11-20T22:48:37.448+0000] {processor.py:839} INFO - DAG(s) dict_keys(['COVID-19']) retrieved from /opt/airflow/dags/dag_etl.py
+[2023-11-20T22:48:37.463+0000] {logging_mixin.py:151} INFO - [2023-11-20T22:48:37.463+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2023-11-20T22:48:37.471+0000] {logging_mixin.py:151} INFO - [2023-11-20T22:48:37.471+0000] {dag.py:3722} INFO - Setting next_dagrun for COVID-19 to None, run_after=None
+[2023-11-20T22:48:37.485+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/dag_etl.py took 0.397 seconds
+[2023-11-20T22:48:59.201+0000] {processor.py:157} INFO - Started process (PID=299) to work on /opt/airflow/dags/dag_etl.py
+[2023-11-20T22:48:59.202+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/dag_etl.py for tasks to queue
+[2023-11-20T22:48:59.203+0000] {logging_mixin.py:151} INFO - [2023-11-20T22:48:59.203+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/dag_etl.py
+[2023-11-20T22:48:59.546+0000] {processor.py:839} INFO - DAG(s) dict_keys(['COVID-19']) retrieved from /opt/airflow/dags/dag_etl.py
+[2023-11-20T22:48:59.561+0000] {logging_mixin.py:151} INFO - [2023-11-20T22:48:59.560+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2023-11-20T22:48:59.568+0000] {logging_mixin.py:151} INFO - [2023-11-20T22:48:59.568+0000] {dag.py:3722} INFO - Setting next_dagrun for COVID-19 to None, run_after=None
+[2023-11-20T22:48:59.586+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/dag_etl.py took 0.386 seconds
+>>>>>>> 68e9a444d65471f11a4f55b91d42594ccddca2e0

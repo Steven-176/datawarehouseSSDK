@@ -1,0 +1,2 @@
+- Record avec données manquantes existantes.
+	-> Combler le vide par des 0.
