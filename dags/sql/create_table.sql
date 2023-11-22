@@ -48,3 +48,10 @@ INSERT INTO Age VALUES (3, "15-44 ans");
 INSERT INTO Age VALUES (4, "45-64 ans");
 INSERT INTO Age VALUES (5, "65-74 ans");
 INSERT INTO Age VALUES (6, "75 ans et plus");
+
+INSERT INTO Age(id_age, tranche_age)
+SELECT 0, 'tous âges'
+WHERE
+NOT EXISTS (
+SELECT id_age FROM Age WHERE id_age = 0
+);

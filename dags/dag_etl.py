@@ -36,6 +36,9 @@ def transform_data():
     
     # Suppression des colonnes
     df = df.drop(columns=columns_to_drop, axis=1)
+
+    columns_to_fill = ["nbre_pass_corona", "nbre_pass_tot", "nbre_hospit_corona"]
+    df[columns_to_fill] = df[columns_to_fill].fillna('0')
     
     # df.to_csv(os.path.expandvars("${AIRFLOW_HOME}/data/test.csv"), sep=";", index=False)
     
