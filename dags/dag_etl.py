@@ -2,6 +2,7 @@ from airflow import DAG
 from airflow.operators.bash_operator import BashOperator
 from airflow.operators.python_operator import PythonOperator
 from airflow.operators.postgres_operator import PostgresOperator
+from airflow.hooks.postgres_hook import PostgresHook
 from datetime import datetime
 import pandas as pd
 import os
@@ -40,9 +41,29 @@ def transform_data():
     columns_to_fill = ["nbre_pass_corona", "nbre_pass_tot", "nbre_hospit_corona"]
     df[columns_to_fill] = df[columns_to_fill].fillna('0')
     
-    df.to_csv(os.path.expandvars("${AIRFLOW_HOME}/data/test.csv"), sep=";", index=False)
+    # df.to_csv(os.path.expandvars("${AIRFLOW_HOME}/data/test.csv"), sep=";", index=False)
     
     return df
+
+def insert_data_into_db():
+    # Utilisation de PostgresHook pour se connecter à la base de données
+    pg_hook = PostgresHook(postgres_conn_id='postgres_connexion')
+
+    # Exemple d'insertion dans la table Departement
+    # À adapter en fonction de vos besoins et des données spécifiques
+    insert_departement_query = """
+    INSERT INTO Departement (num_departement, nom_departement, nom_region) 
+    VALUES (%s, %s, %s);
+    """
+    departement_data = ...  # Données à insérer, sous forme de liste de tuples
+
+    # Connexion à la base de données et exécution de la requête
+    conn = pg_hook.get_conn()
+    cursor = conn.cursor()
+    cursor.executemany(insert_departement_query, departement_data)
+    conn.commit()
+    cursor.close()
+    conn.close()
 
 default_args = {
     'owner': 'airflow',
@@ -81,6 +102,18 @@ with DAG(
         python_callable = transform_data,
         dag=dag,
     )
+
+    execute_sql_script = PostgresOperator(
+        task_id='execute_sql_script',
+        postgres_conn_id='postgres_connexion',  # Remplacez par votre ID de connexion PostgreSQL
+        sql='sql/create_table.sql',  # Chemin vers votre script SQL
+    )
+
+    dag_insert_data = PythonOperator(
+        task_id='insert_data',
+        python_callable=insert_data_into_db,
+        dag=dag,
+    )
     
     # create_table = PostgresOperator(
     #     task_id='create_table',
@@ -92,4 +125,4 @@ with DAG(
     #     task_id='transform_and_load',
     #     python_callable=load_values,
 
-    dag_extract_donnees_urgences_SOS_medecins >> dag_extract_tranche_age_donnee_urgences >> dag_extract_departements_region >> dag_transform_data
+    dag_extract_donnees_urgences_SOS_medecins >> dag_extract_tranche_age_donnee_urgences >> dag_extract_departements_region >> dag_transform_data >> dag_insert_data
