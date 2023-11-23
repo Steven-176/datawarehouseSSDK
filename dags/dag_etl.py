@@ -49,6 +49,13 @@ def data_transform_and_load():
     
     df_departements_region = df_departements_region.rename(columns={"num_dep": "num_departement", "dep_name": "nom_departement", "region_name": "nom_region"})
 
+    df_departements_region['num_departement'] = df_departements_region['num_departement'].astype(str)
+    df_departements_region['nom_departement'] = df_departements_region['num_departement'].astype(str)
+    df_departements_region['nom_region'] = df_departements_region['num_departement'].astype(str)
+
+
+    # print(df_departements_region.dtypes)
+
 
     # Obtenez les informations de connexion à la base de données à partir de airflow.cfg
     conn_id = 'postgres_connexion'  # Remplacez par votre ID de connexion PostgreSQL

@@ -1,6 +1,6 @@
 -- Table des dimensions
 CREATE TABLE IF NOT EXISTS Departement (
-    num_departement INT NOT NULL,
+    num_departement VARCHAR(255) NOT NULL,
     nom_departement VARCHAR(255) NOT NULL,
     nom_region VARCHAR(255) NOT NULL,
     PRIMARY KEY (num_departement)
@@ -43,7 +43,7 @@ CREATE TABLE IF NOT EXISTS Urgence_covid (
     id_hospitalisation INT,
     id_passage INT,
     id_age INT,
-    num_departement INT,
+    num_departement VARCHAR(255),
     PRIMARY KEY (id_urgence_covid),
     FOREIGN KEY (id_hospitalisation) REFERENCES Hospitalisation(id_hospitalisation),
     FOREIGN KEY (id_passage) REFERENCES Passage(id_passage),
