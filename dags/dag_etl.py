@@ -50,27 +50,40 @@ def data_transform_and_load():
     df_departements_region = df_departements_region.rename(columns={"num_dep": "num_departement", "dep_name": "nom_departement", "region_name": "nom_region"})
 
     df_departements_region['num_departement'] = df_departements_region['num_departement'].astype(str)
-    df_departements_region['nom_departement'] = df_departements_region['num_departement'].astype(str)
-    df_departements_region['nom_region'] = df_departements_region['num_departement'].astype(str)
+    df_departements_region['nom_departement'] = df_departements_region['nom_departement'].astype(str)
+    df_departements_region['nom_region'] = df_departements_region['nom_region'].astype(str)
+
+    pg_hook = PostgresHook(postgres_conn_id='postgres_connexion')
+    pg_conn = pg_hook.get_conn()
+    cursor = pg_conn.cursor()
+    for _, row in df_departements_region.iterrows():
+        cursor.execute("INSERT INTO departement (num_departement, nom_departement, nom_region) VALUES (%s, %s, %s)",
+                       (row['num_departement'], row['nom_departement'], row['nom_region']))
+
+    pg_conn.commit()
+    cursor.close()
+
+    return "Data inserted successfully"
+
 
 
     # print(df_departements_region.dtypes)
 
 
     # Obtenez les informations de connexion à la base de données à partir de airflow.cfg
-    conn_id = 'postgres_connexion'  # Remplacez par votre ID de connexion PostgreSQL
-    conn_uri = conf.get('database', 'sql_alchemy_conn')
-    conn_uri = conn_uri.replace('postgres://', f'postgresql+psycopg2://')
+    # conn_id = 'postgres_connexion'  # Remplacez par votre ID de connexion PostgreSQL
+    # conn_uri = conf.get('database', 'sql_alchemy_conn')
+    # conn_uri = conn_uri.replace('postgres://', f'postgresql+psycopg2://')
     
-    # Créez une instance de moteur SQLAlchemy en utilisant la chaîne de connexion
-    engine = create_engine(conn_uri)
+    # # Créez une instance de moteur SQLAlchemy en utilisant la chaîne de connexion
+    # engine = create_engine(conn_uri)
     
-    # Utilisez le moteur SQLAlchemy pour écrire les données
-    df_departements_region.to_sql('departement', con=engine, if_exists='replace', index=False, chunksize=1000)
+    # # Utilisez le moteur SQLAlchemy pour écrire les données
+    # df_departements_region.to_sql('departement', con=engine, if_exists='append', index=False, chunksize=1000, method='multi')
     
-    sample_data = {"num_departement": "101", "nom_departement": "Test_Department", "nom_region": "Test_Region"}
-    sample_df = pd.DataFrame([sample_data])
-    sample_df.to_sql('departement', con=engine, if_exists='append', index=False, chunksize=1000)
+    # sample_data = {"num_departement": "101", "nom_departement": "Test_Department", "nom_region": "Test_Region"}
+    # sample_df = pd.DataFrame([sample_data])
+    # sample_df.to_sql('departement', con=engine, if_exists='append', index=False, chunksize=1000)
 
     
     return df_departements_region
