@@ -1,0 +1,16 @@
+[2023-11-23T19:59:44.063+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: COVID-19.insert_data manual__2023-11-22T22:30:11.481856+00:00 [queued]>
+[2023-11-23T19:59:44.076+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: COVID-19.insert_data manual__2023-11-22T22:30:11.481856+00:00 [queued]>
+[2023-11-23T19:59:44.077+0000] {taskinstance.py:1361} INFO - Starting attempt 7 of 7
+[2023-11-23T19:59:44.095+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): insert_data> on 2023-11-22 22:30:11.481856+00:00
+[2023-11-23T19:59:44.100+0000] {standard_task_runner.py:57} INFO - Started process 112 to run task
+[2023-11-23T19:59:44.104+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'COVID-19', 'insert_data', 'manual__2023-11-22T22:30:11.481856+00:00', '--job-id', '74', '--raw', '--subdir', 'DAGS_FOLDER/dag_etl.py', '--cfg-path', '/tmp/tmpls91dhyg']
+[2023-11-23T19:59:44.108+0000] {standard_task_runner.py:85} INFO - Job 74: Subtask insert_data
+[2023-11-23T19:59:44.162+0000] {task_command.py:416} INFO - Running <TaskInstance: COVID-19.insert_data manual__2023-11-22T22:30:11.481856+00:00 [running]> on host 89d301135b3a
+[2023-11-23T19:59:44.467+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='COVID-19' AIRFLOW_CTX_TASK_ID='insert_data' AIRFLOW_CTX_EXECUTION_DATE='2023-11-22T22:30:11.481856+00:00' AIRFLOW_CTX_TRY_NUMBER='7' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-11-22T22:30:11.481856+00:00'
+[2023-11-23T19:59:44.489+0000] {warnings.py:109} WARNING - /opt/***/dags/dag_etl.py:55: FutureWarning: section/key [core/sql_alchemy_conn] has been deprecated, you should use[database/sql_alchemy_conn] instead. Please update your `conf.get*` call to use the new name
+  conn_uri = conf.get('core', 'sql_alchemy_conn')
+
+[2023-11-23T19:59:44.539+0000] {python.py:194} INFO - Done. Returned value was: None
+[2023-11-23T19:59:44.550+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=COVID-19, task_id=insert_data, execution_date=20231122T223011, start_date=20231123T195944, end_date=20231123T195944
+[2023-11-23T19:59:44.598+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2023-11-23T19:59:44.619+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check

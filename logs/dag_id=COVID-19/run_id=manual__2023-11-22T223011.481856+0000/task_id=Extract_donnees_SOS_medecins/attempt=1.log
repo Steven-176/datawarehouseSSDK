@@ -1,0 +1,26 @@
+[2023-11-22T22:30:13.870+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: COVID-19.Extract_donnees_SOS_medecins manual__2023-11-22T22:30:11.481856+00:00 [queued]>
+[2023-11-22T22:30:14.040+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: COVID-19.Extract_donnees_SOS_medecins manual__2023-11-22T22:30:11.481856+00:00 [queued]>
+[2023-11-22T22:30:14.040+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 1
+[2023-11-22T22:30:14.052+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): Extract_donnees_SOS_medecins> on 2023-11-22 22:30:11.481856+00:00
+[2023-11-22T22:30:14.057+0000] {standard_task_runner.py:57} INFO - Started process 85 to run task
+[2023-11-22T22:30:14.059+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'COVID-19', 'Extract_donnees_SOS_medecins', 'manual__2023-11-22T22:30:11.481856+00:00', '--job-id', '56', '--raw', '--subdir', 'DAGS_FOLDER/dag_etl.py', '--cfg-path', '/tmp/tmpm4l9rkk9']
+[2023-11-22T22:30:14.063+0000] {standard_task_runner.py:85} INFO - Job 56: Subtask Extract_donnees_SOS_medecins
+[2023-11-22T22:30:14.097+0000] {task_command.py:416} INFO - Running <TaskInstance: COVID-19.Extract_donnees_SOS_medecins manual__2023-11-22T22:30:11.481856+00:00 [running]> on host 96847e9fc1db
+[2023-11-22T22:30:14.149+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='COVID-19' AIRFLOW_CTX_TASK_ID='Extract_donnees_SOS_medecins' AIRFLOW_CTX_EXECUTION_DATE='2023-11-22T22:30:11.481856+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-11-22T22:30:11.481856+00:00'
+[2023-11-22T22:30:14.336+0000] {python.py:194} INFO - Done. Returned value was:         dep date_de_passage  ... nbre_acte_tot_h nbre_acte_tot_f
+0        01      2022-12-26  ...             NaN             NaN
+1        01      2022-12-26  ...             NaN             NaN
+2        01      2022-12-26  ...             NaN             NaN
+3        01      2022-12-26  ...             NaN             NaN
+4        01      2022-12-26  ...             NaN             NaN
+...     ...             ...  ...             ...             ...
+214216  976      2023-10-24  ...             NaN             NaN
+214217  976      2023-10-24  ...             NaN             NaN
+214218  976      2023-10-24  ...             NaN             NaN
+214219  976      2023-10-24  ...             NaN             NaN
+214220  976      2023-10-24  ...             NaN             NaN
+
+[214221 rows x 18 columns]
+[2023-11-22T22:30:14.649+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=COVID-19, task_id=Extract_donnees_SOS_medecins, execution_date=20231122T223011, start_date=20231122T223013, end_date=20231122T223014
+[2023-11-22T22:30:14.674+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2023-11-22T22:30:14.693+0000] {taskinstance.py:2778} INFO - 1 downstream tasks scheduled from follow-on schedule check
