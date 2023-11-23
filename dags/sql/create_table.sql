@@ -7,7 +7,7 @@ CREATE TABLE IF NOT EXISTS Departement (
 );
 
 CREATE TABLE IF NOT EXISTS Passage (
-    id_passage INT NOT NULL,
+    id_passage SERIAL,
     nombre_passage_corona INT,
     nombre_passage_total INT,
     nombre_passage_corona_h INT,
@@ -18,7 +18,7 @@ CREATE TABLE IF NOT EXISTS Passage (
 );
 
 CREATE TABLE IF NOT EXISTS Hospitalisation (
-    id_hospitalisation INT NOT NULL,
+    id_hospitalisation SERIAL,
     nombre_hospitalisation_corona INT,
     nombre_hospitalisation_corona_h INT,
     nombre_hospitalisation_corona_f INT,
@@ -26,20 +26,15 @@ CREATE TABLE IF NOT EXISTS Hospitalisation (
 );
 
 CREATE TABLE IF NOT EXISTS Age (
-    id_age INT NOT NULL,
+    id_age SERIAL,
     tranche_age VARCHAR(255) NOT NULL,
     PRIMARY KEY (id_age)
 );
 
 -- Table des faits
 CREATE TABLE IF NOT EXISTS Urgence_covid (
-    -- id_urgence_covid INT NOT NULL,
-    -- id_hospitalisation INT FOREIGN KEY REFERENCES Hospitalisation(id_hospitalisation),
-    -- id_passage INT FOREIGN KEY REFERENCES Passage(id_passage),
-    -- id_age INT FOREIGN KEY REFERENCES Age(id_age),
-    -- num_departement INT FOREIGN KEY REFERENCES Departement(num_departement),
-    -- PRIMARY KEY (id_urgence_covid)
-    id_urgence_covid INT NOT NULL,
+    id_urgence_covid SERIAL,
+    date_de_passage DATE,
     id_hospitalisation INT,
     id_passage INT,
     id_age INT,
