@@ -4,6 +4,8 @@ from airflow.operators.python_operator import PythonOperator
 from airflow.operators.postgres_operator import PostgresOperator
 from airflow.hooks.postgres_hook import PostgresHook
 from datetime import datetime
+from airflow.hooks.postgres_hook import PostgresHook
+from sqlalchemy import create_engine
 import pandas as pd
 import os
 import psycopg2
@@ -30,6 +32,21 @@ def extract_departements_region():
     return df_departements_region
 
 def transform_data():
+    # df = extract_donnees_urgences_SOS_medecins()
+    
+    # # Liste des colonnes à supprimer    
+    # columns_to_drop = ["nbre_acte_corona", "nbre_acte_tot", "nbre_acte_corona_h", "nbre_acte_corona_f", "nbre_acte_tot_h", "nbre_acte_tot_f"]
+    
+    # # Suppression des colonnes
+    # df = df.drop(columns=columns_to_drop, axis=1)
+
+    # columns_to_fill = ["nbre_pass_corona", "nbre_pass_tot", "nbre_hospit_corona"]
+    # df[columns_to_fill] = df[columns_to_fill].fillna('0')
+    
+    # # df.to_csv(os.path.expandvars("${AIRFLOW_HOME}/data/test.csv"), sep=";", index=False)
+
+    ##############################################################################################""
+
     df = extract_donnees_urgences_SOS_medecins()
     
     # Liste des colonnes à supprimer    
@@ -43,7 +60,49 @@ def transform_data():
     
     # df.to_csv(os.path.expandvars("${AIRFLOW_HOME}/data/test.csv"), sep=";", index=False)
     
-    return df
+    df_departements_region = extract_departements_region()
+    
+    df_departements_region = df_departements_region.rename(columns={"num_dep": "num_departement", "dep_name": "nom_departement", "region_name": "nom_region"})
+
+    df_departements_region['num_departement'] = df_departements_region['num_departement'].astype(str)
+    df_departements_region['nom_departement'] = df_departements_region['nom_departement'].astype(str)
+    df_departements_region['nom_region'] = df_departements_region['nom_region'].astype(str)
+
+
+    # print(df_departements_region.dtypes)
+
+
+    # # Obtenez les informations de connexion à la base de données à partir de airflow.cfg
+    # conn_id = 'postgres_connexion'  # Remplacez par votre ID de connexion PostgreSQL
+    
+    # conn_uri = conf.get('database', 'sql_alchemy_conn')
+    # conn_uri = conn_uri.replace('postgres://', f'postgresql+psycopg2://')
+    
+    # # Créez une instance de moteur SQLAlchemy en utilisant la chaîne de connexion
+    # engine = create_engine(conn_uri)
+    
+    
+    # # Utilisez le moteur SQLAlchemy pour écrire les données
+    # df_departements_region.to_sql('departement', con=engine, if_exists='replace', index=False, chunksize=1000)
+    
+    # sample_data = {"num_departement": "101", "nom_departement": "Test_Department", "nom_region": "Test_Region"}
+    # sample_df = pd.DataFrame([sample_data])
+    # sample_df.to_sql('departement', con=engine, if_exists='append', index=False, chunksize=1000)
+
+    # Utilisez PostgresHook pour obtenir la connexion
+    hook = PostgresHook(postgres_conn_id='postgres_connexion')
+    engine = create_engine(hook.get_uri())
+
+    try:
+        df_departements_region.to_sql('departement', con=engine, if_exists='append', index=False, method='multi')
+    except Exception as e:
+        print(f"Une erreur s'est produite lors de l'insertion des données : {e}")
+        raise
+
+    
+    return df_departements_region
+    
+    # return df
 
 def insert_data_into_db():
     # Utilisation de PostgresHook pour se connecter à la base de données
