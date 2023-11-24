@@ -1,2 +1,5 @@
 - Record avec données manquantes existantes.
 	-> Combler le vide par des 0.
+
+Lors de la documentation :
+	- dire qu'il faut modifier postgres_conn_id='postgres_connexion',

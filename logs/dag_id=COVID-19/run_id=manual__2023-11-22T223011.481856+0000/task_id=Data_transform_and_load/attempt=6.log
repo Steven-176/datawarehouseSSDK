@@ -1,0 +1,76 @@
+[2023-11-23T20:48:04.222+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: COVID-19.Data_transform_and_load manual__2023-11-22T22:30:11.481856+00:00 [queued]>
+[2023-11-23T20:48:04.228+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: COVID-19.Data_transform_and_load manual__2023-11-22T22:30:11.481856+00:00 [queued]>
+[2023-11-23T20:48:04.228+0000] {taskinstance.py:1361} INFO - Starting attempt 6 of 6
+[2023-11-23T20:48:04.237+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): Data_transform_and_load> on 2023-11-22 22:30:11.481856+00:00
+[2023-11-23T20:48:04.241+0000] {standard_task_runner.py:57} INFO - Started process 875 to run task
+[2023-11-23T20:48:04.242+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'COVID-19', 'Data_transform_and_load', 'manual__2023-11-22T22:30:11.481856+00:00', '--job-id', '84', '--raw', '--subdir', 'DAGS_FOLDER/dag_etl.py', '--cfg-path', '/tmp/tmpyhnr58xy']
+[2023-11-23T20:48:04.244+0000] {standard_task_runner.py:85} INFO - Job 84: Subtask Data_transform_and_load
+[2023-11-23T20:48:04.274+0000] {task_command.py:416} INFO - Running <TaskInstance: COVID-19.Data_transform_and_load manual__2023-11-22T22:30:11.481856+00:00 [running]> on host 89d301135b3a
+[2023-11-23T20:48:04.474+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='COVID-19' AIRFLOW_CTX_TASK_ID='Data_transform_and_load' AIRFLOW_CTX_EXECUTION_DATE='2023-11-22T22:30:11.481856+00:00' AIRFLOW_CTX_TRY_NUMBER='6' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-11-22T22:30:11.481856+00:00'
+[2023-11-23T20:48:04.727+0000] {taskinstance.py:1937} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1910, in _execute_context
+    self.dialect.do_execute(
+  File "/home/airflow/.local/lib/python3.8/site-packages/sqlalchemy/engine/default.py", line 736, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.UndefinedColumn: column "num_dep" of relation "departement" does not exist
+LINE 1: INSERT INTO departement (num_dep, dep_name, region_name) VAL...
+                                 ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 192, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 209, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/dag_etl.py", line 66, in data_transform_and_load
+    sample_df.to_sql('departement', con=engine, if_exists='append', index=False, chunksize=1000)
+  File "/home/airflow/.local/lib/python3.8/site-packages/pandas/core/generic.py", line 2878, in to_sql
+    return sql.to_sql(
+  File "/home/airflow/.local/lib/python3.8/site-packages/pandas/io/sql.py", line 769, in to_sql
+    return pandas_sql.to_sql(
+  File "/home/airflow/.local/lib/python3.8/site-packages/pandas/io/sql.py", line 1920, in to_sql
+    total_inserted = sql_engine.insert_records(
+  File "/home/airflow/.local/lib/python3.8/site-packages/pandas/io/sql.py", line 1470, in insert_records
+    raise err
+  File "/home/airflow/.local/lib/python3.8/site-packages/pandas/io/sql.py", line 1461, in insert_records
+    return table.insert(chunksize=chunksize, method=method)
+  File "/home/airflow/.local/lib/python3.8/site-packages/pandas/io/sql.py", line 1023, in insert
+    num_inserted = exec_insert(conn, keys, chunk_iter)
+  File "/home/airflow/.local/lib/python3.8/site-packages/pandas/io/sql.py", line 929, in _execute_insert
+    result = conn.execute(self.table.insert(), data)
+  File "/home/airflow/.local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1385, in execute
+    return meth(self, multiparams, params, _EMPTY_EXECUTION_OPTS)
+  File "/home/airflow/.local/lib/python3.8/site-packages/sqlalchemy/sql/elements.py", line 334, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "/home/airflow/.local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1577, in _execute_clauseelement
+    ret = self._execute_context(
+  File "/home/airflow/.local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1953, in _execute_context
+    self._handle_dbapi_exception(
+  File "/home/airflow/.local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 2134, in _handle_dbapi_exception
+    util.raise_(
+  File "/home/airflow/.local/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/airflow/.local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1910, in _execute_context
+    self.dialect.do_execute(
+  File "/home/airflow/.local/lib/python3.8/site-packages/sqlalchemy/engine/default.py", line 736, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.ProgrammingError: (psycopg2.errors.UndefinedColumn) column "num_dep" of relation "departement" does not exist
+LINE 1: INSERT INTO departement (num_dep, dep_name, region_name) VAL...
+                                 ^
+
+[SQL: INSERT INTO departement (num_dep, dep_name, region_name) VALUES (%(num_dep)s, %(dep_name)s, %(region_name)s)]
+[parameters: {'num_dep': '101', 'dep_name': 'Test_Department', 'region_name': 'Test_Region'}]
+(Background on this error at: https://sqlalche.me/e/14/f405)
+[2023-11-23T20:48:04.757+0000] {taskinstance.py:1400} INFO - Marking task as FAILED. dag_id=COVID-19, task_id=Data_transform_and_load, execution_date=20231122T223011, start_date=20231123T204804, end_date=20231123T204804
+[2023-11-23T20:48:04.766+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 84 for task Data_transform_and_load ((psycopg2.errors.UndefinedColumn) column "num_dep" of relation "departement" does not exist
+LINE 1: INSERT INTO departement (num_dep, dep_name, region_name) VAL...
+                                 ^
+
+[SQL: INSERT INTO departement (num_dep, dep_name, region_name) VALUES (%(num_dep)s, %(dep_name)s, %(region_name)s)]
+[parameters: {'num_dep': '101', 'dep_name': 'Test_Department', 'region_name': 'Test_Region'}]
+(Background on this error at: https://sqlalche.me/e/14/f405); 875)
+[2023-11-23T20:48:04.776+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2023-11-23T20:48:04.788+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check

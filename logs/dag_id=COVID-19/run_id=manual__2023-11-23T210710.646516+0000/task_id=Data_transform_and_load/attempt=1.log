@@ -1,0 +1,36 @@
+[2023-11-23T21:07:16.504+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: COVID-19.Data_transform_and_load manual__2023-11-23T21:07:10.646516+00:00 [queued]>
+[2023-11-23T21:07:16.511+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: COVID-19.Data_transform_and_load manual__2023-11-23T21:07:10.646516+00:00 [queued]>
+[2023-11-23T21:07:16.511+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 1
+[2023-11-23T21:07:16.520+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): Data_transform_and_load> on 2023-11-23 21:07:10.646516+00:00
+[2023-11-23T21:07:16.524+0000] {standard_task_runner.py:57} INFO - Started process 1206 to run task
+[2023-11-23T21:07:16.525+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'COVID-19', 'Data_transform_and_load', 'manual__2023-11-23T21:07:10.646516+00:00', '--job-id', '93', '--raw', '--subdir', 'DAGS_FOLDER/dag_etl.py', '--cfg-path', '/tmp/tmpeaxamqkw']
+[2023-11-23T21:07:16.527+0000] {standard_task_runner.py:85} INFO - Job 93: Subtask Data_transform_and_load
+[2023-11-23T21:07:16.556+0000] {task_command.py:416} INFO - Running <TaskInstance: COVID-19.Data_transform_and_load manual__2023-11-23T21:07:10.646516+00:00 [running]> on host 89d301135b3a
+[2023-11-23T21:07:16.737+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='COVID-19' AIRFLOW_CTX_TASK_ID='Data_transform_and_load' AIRFLOW_CTX_EXECUTION_DATE='2023-11-23T21:07:10.646516+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-11-23T21:07:10.646516+00:00'
+[2023-11-23T21:07:16.926+0000] {taskinstance.py:1937} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 192, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 209, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/dag_etl.py", line 52, in data_transform_and_load
+    df_departements_region['num_departement'] = df_departements_region['num_departement'].astype(int)
+  File "/home/airflow/.local/lib/python3.8/site-packages/pandas/core/generic.py", line 6324, in astype
+    new_data = self._mgr.astype(dtype=dtype, copy=copy, errors=errors)
+  File "/home/airflow/.local/lib/python3.8/site-packages/pandas/core/internals/managers.py", line 451, in astype
+    return self.apply(
+  File "/home/airflow/.local/lib/python3.8/site-packages/pandas/core/internals/managers.py", line 352, in apply
+    applied = getattr(b, f)(**kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/pandas/core/internals/blocks.py", line 511, in astype
+    new_values = astype_array_safe(values, dtype, copy=copy, errors=errors)
+  File "/home/airflow/.local/lib/python3.8/site-packages/pandas/core/dtypes/astype.py", line 242, in astype_array_safe
+    new_values = astype_array(values, dtype, copy=copy)
+  File "/home/airflow/.local/lib/python3.8/site-packages/pandas/core/dtypes/astype.py", line 187, in astype_array
+    values = _astype_nansafe(values, dtype, copy=copy)
+  File "/home/airflow/.local/lib/python3.8/site-packages/pandas/core/dtypes/astype.py", line 138, in _astype_nansafe
+    return arr.astype(dtype, copy=True)
+ValueError: invalid literal for int() with base 10: '2A'
+[2023-11-23T21:07:16.936+0000] {taskinstance.py:1400} INFO - Marking task as FAILED. dag_id=COVID-19, task_id=Data_transform_and_load, execution_date=20231123T210710, start_date=20231123T210716, end_date=20231123T210716
+[2023-11-23T21:07:16.944+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 93 for task Data_transform_and_load (invalid literal for int() with base 10: '2A'; 1206)
+[2023-11-23T21:07:16.979+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2023-11-23T21:07:16.990+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check
