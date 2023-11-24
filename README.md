@@ -69,3 +69,24 @@ $ docker compose up
     - Password : `airflow`
     - Port : `5433`
 
+- On peut cliquer sur le bouton "Test" et la connexion à la base de données est censé se passer avec succès. Puis, on peut cliquer sur le bouton "Save".
+
+- Ensuite, on va dans *DAGs* et on clique sur notre DAG qui est `COVID-19`. Puis, en haut à droite, on clique sur le bouton Play *Trigger DAG*. Cela va lancer le DAG. On aura l'extraction, la transformation puis le chargement de données qui vont s'effectuer. 
+- La tâche de chargement de données prend beaucoup de temps (environ 20 minutes)
+
+---
+
+**Dans DBeaver :**
+
+- Cliquer sur le bouton `Nouvelle Connexion` en haut à gauche
+- Choisir `PostgreSQL`
+- Les données à remplir :
+    - Host : `127.0.0.1`
+    - Port : `5433`
+    - Database : `airflow`
+    - Nom d'utilisateur : `airflow`
+    - Mot de passe : `airflow`
+
+- Dans l'onglet "PostgreSQL", cochez la case *show all databases*. Puis nous pouvons cliquer sur Valider.
+
+Grâce au DAG *COVID-19*, on peut retrouver les données qui ont été chargés dans les tables
