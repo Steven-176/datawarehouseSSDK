@@ -47,8 +47,9 @@ def data_transform_and_load():
     
     # df.to_csv(os.path.expandvars("${AIRFLOW_HOME}/data/test.csv"), sep=";", index=False)
     
-    df_departements_region = extract_departements_region()
+    ### Insertion des données dans la table "Departement"
     
+    df_departements_region = extract_departements_region()
     df_departements_region = df_departements_region.rename(columns={"num_dep": "num_departement", "dep_name": "nom_departement", "region_name": "nom_region"})
 
     df_departements_region['num_departement'] = df_departements_region['num_departement'].astype(str)
@@ -59,68 +60,34 @@ def data_transform_and_load():
     pg_conn = pg_hook.get_conn()
     cursor = pg_conn.cursor()
     for _, row in df_departements_region.iterrows():
-        cursor.execute("INSERT INTO departement (num_departement, nom_departement, nom_region) VALUES (%s, %s, %s)",
+        cursor.execute("INSERT INTO departement (num_departement, nom_departement, nom_region) VALUES (%s, %s, %s) ON CONFLICT (num_departement) DO NOTHING",
                        (row['num_departement'], row['nom_departement'], row['nom_region']))
+
+    pg_conn.commit()
+    cursor.close()
+    
+    ### Insertion des données dans la table "Passage"
+    
+    df_passage = df[["nbre_pass_corona", "nbre_pass_tot", "nbre_pass_corona_h", "nbre_pass_corona_f", "nbre_pass_tot_h", "nbre_pass_tot_f"]]
+
+    df_passage['nbre_pass_corona'] = df_passage['nbre_pass_corona'].fillna(0).astype(int)
+    df_passage['nbre_pass_tot'] = df_passage['nbre_pass_tot'].fillna(0).astype(int)
+    df_passage['nbre_pass_corona_h'] = df_passage['nbre_pass_corona_h'].fillna(0).astype(int)
+    df_passage['nbre_pass_corona_f'] = df_passage['nbre_pass_corona_f'].fillna(0).astype(int)
+    df_passage['nbre_pass_tot_h'] = df_passage['nbre_pass_tot_h'].fillna(0).astype(int)
+    df_passage['nbre_pass_tot_f'] = df_passage['nbre_pass_tot_f'].fillna(0).astype(int)
+
+    pg_hook = PostgresHook(postgres_conn_id='postgres_connexion')
+    pg_conn = pg_hook.get_conn()
+    cursor = pg_conn.cursor()
+    for _, row in df_passage.iterrows():
+        cursor.execute("INSERT INTO passage (nombre_passage_corona, nombre_passage_total, nombre_passage_corona_h, nombre_passage_corona_f, nombre_passage_total_h, nombre_passage_total_f) VALUES (%s, %s, %s, %s, %s, %s) ON CONFLICT (id_passage) DO NOTHING",
+                       (row['nbre_pass_corona'], row['nbre_pass_tot'], row['nbre_pass_corona_h'], row['nbre_pass_corona_f'], row['nbre_pass_tot_h'], row['nbre_pass_tot_f']))
 
     pg_conn.commit()
     cursor.close()
 
     return "Data inserted successfully"
-
-
-
-    # print(df_departements_region.dtypes)
-
-
-    # Obtenez les informations de connexion à la base de données à partir de airflow.cfg
-    # conn_id = 'postgres_connexion'  # Remplacez par votre ID de connexion PostgreSQL
-    # conn_uri = conf.get('database', 'sql_alchemy_conn')
-    # conn_uri = conn_uri.replace('postgres://', f'postgresql+psycopg2://')
-    
-    # # Créez une instance de moteur SQLAlchemy en utilisant la chaîne de connexion
-    # engine = create_engine(conn_uri)
-    
-    # # Utilisez le moteur SQLAlchemy pour écrire les données
-    # df_departements_region.to_sql('departement', con=engine, if_exists='append', index=False, chunksize=1000, method='multi')
-    
-    # sample_data = {"num_departement": "101", "nom_departement": "Test_Department", "nom_region": "Test_Region"}
-    # sample_df = pd.DataFrame([sample_data])
-    # sample_df.to_sql('departement', con=engine, if_exists='append', index=False, chunksize=1000)
-
-    
-    return df_departements_region
-
-# def insert_data_into_db():
-#     df_departements_region = extract_departements_region()
-    
-#     # Utilisation de PostgresHook pour se connecter à la base de données
-#     pg_hook = PostgresHook(postgres_conn_id='postgres_connexion')
-    
-#     # Obtenez la chaîne de connexion à partir de PostgresHook
-#     conn_uri = pg_hook.get_uri()
-    
-#     # Créez une instance de moteur SQLAlchemy en utilisant la chaîne de connexion
-#     engine = create_engine(conn_uri)
-    
-#     # Utilisez le moteur SQLAlchemy pour écrire les données
-#     df_departements_region.to_sql('departement', con=engine, if_exists='replace', index=False, chunksize=1000)
-
-
-    # Exemple d'insertion dans la table Departement
-    # À adapter en fonction de vos besoins et des données spécifiques
-    # insert_departement_query = """
-    # INSERT INTO Departement (num_departement, nom_departement, nom_region) 
-    # VALUES (%s, %s, %s);
-    # """
-    # departement_data = ...  # Données à insérer, sous forme de liste de tuples
-
-    # # Connexion à la base de données et exécution de la requête
-    # conn = pg_hook.get_conn()
-    # cursor = conn.cursor()
-    # cursor.executemany(insert_departement_query, departement_data)
-    # conn.commit()
-    # cursor.close()
-    # conn.close()
 
 default_args = {
     'owner': 'airflow',
