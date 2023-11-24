@@ -1,0 +1,38 @@
+[2023-11-24T19:39:02.851+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: COVID-19.Data_transform_and_load manual__2023-11-22T19:29:07.263785+00:00 [queued]>
+[2023-11-24T19:39:02.864+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: COVID-19.Data_transform_and_load manual__2023-11-22T19:29:07.263785+00:00 [queued]>
+[2023-11-24T19:39:02.865+0000] {taskinstance.py:1361} INFO - Starting attempt 15 of 15
+[2023-11-24T19:39:02.879+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): Data_transform_and_load> on 2023-11-22 19:29:07.263785+00:00
+[2023-11-24T19:39:02.886+0000] {standard_task_runner.py:57} INFO - Started process 1984 to run task
+[2023-11-24T19:39:02.893+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'COVID-19', 'Data_transform_and_load', 'manual__2023-11-22T19:29:07.263785+00:00', '--job-id', '93', '--raw', '--subdir', 'DAGS_FOLDER/dag_etl.py', '--cfg-path', '/tmp/tmp906oo8og']
+[2023-11-24T19:39:02.897+0000] {standard_task_runner.py:85} INFO - Job 93: Subtask Data_transform_and_load
+[2023-11-24T19:39:02.979+0000] {task_command.py:416} INFO - Running <TaskInstance: COVID-19.Data_transform_and_load manual__2023-11-22T19:29:07.263785+00:00 [running]> on host 3742b108fdc7
+[2023-11-24T19:39:03.327+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='COVID-19' AIRFLOW_CTX_TASK_ID='Data_transform_and_load' AIRFLOW_CTX_EXECUTION_DATE='2023-11-22T19:29:07.263785+00:00' AIRFLOW_CTX_TRY_NUMBER='15' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-11-22T19:29:07.263785+00:00'
+[2023-11-24T19:39:03.684+0000] {taskinstance.py:1937} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 192, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 209, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/dag_etl.py", line 54, in data_transform_and_load
+    df['date_de_passage'] = pd.to_datetime(df['date_de_passage'], format='%d/%m/%Y')
+  File "/home/airflow/.local/lib/python3.8/site-packages/pandas/core/tools/datetimes.py", line 1046, in to_datetime
+    cache_array = _maybe_cache(arg, format, cache, convert_listlike)
+  File "/home/airflow/.local/lib/python3.8/site-packages/pandas/core/tools/datetimes.py", line 250, in _maybe_cache
+    cache_dates = convert_listlike(unique_dates, format)
+  File "/home/airflow/.local/lib/python3.8/site-packages/pandas/core/tools/datetimes.py", line 453, in _convert_listlike_datetimes
+    return _array_strptime_with_fallback(arg, name, utc, format, exact, errors)
+  File "/home/airflow/.local/lib/python3.8/site-packages/pandas/core/tools/datetimes.py", line 484, in _array_strptime_with_fallback
+    result, timezones = array_strptime(arg, fmt, exact=exact, errors=errors, utc=utc)
+  File "pandas/_libs/tslibs/strptime.pyx", line 530, in pandas._libs.tslibs.strptime.array_strptime
+  File "pandas/_libs/tslibs/strptime.pyx", line 351, in pandas._libs.tslibs.strptime.array_strptime
+ValueError: time data "2022-12-26" doesn't match format "%d/%m/%Y", at position 0. You might want to try:
+    - passing `format` if your strings have a consistent format;
+    - passing `format='ISO8601'` if your strings are all ISO8601 but not necessarily in exactly the same format;
+    - passing `format='mixed'`, and the format will be inferred for each element individually. You might want to use `dayfirst` alongside this.
+[2023-11-24T19:39:03.701+0000] {taskinstance.py:1400} INFO - Marking task as FAILED. dag_id=COVID-19, task_id=Data_transform_and_load, execution_date=20231122T192907, start_date=20231124T193902, end_date=20231124T193903
+[2023-11-24T19:39:03.716+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 93 for task Data_transform_and_load (time data "2022-12-26" doesn't match format "%d/%m/%Y", at position 0. You might want to try:
+    - passing `format` if your strings have a consistent format;
+    - passing `format='ISO8601'` if your strings are all ISO8601 but not necessarily in exactly the same format;
+    - passing `format='mixed'`, and the format will be inferred for each element individually. You might want to use `dayfirst` alongside this.; 1984)
+[2023-11-24T19:39:03.751+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2023-11-24T19:39:03.768+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check

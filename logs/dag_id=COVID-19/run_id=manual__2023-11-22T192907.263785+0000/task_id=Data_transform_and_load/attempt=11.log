@@ -1,0 +1,55 @@
+[2023-11-24T18:35:23.953+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: COVID-19.Data_transform_and_load manual__2023-11-22T19:29:07.263785+00:00 [queued]>
+[2023-11-24T18:35:23.966+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: COVID-19.Data_transform_and_load manual__2023-11-22T19:29:07.263785+00:00 [queued]>
+[2023-11-24T18:35:23.967+0000] {taskinstance.py:1361} INFO - Starting attempt 11 of 11
+[2023-11-24T18:35:23.986+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): Data_transform_and_load> on 2023-11-22 19:29:07.263785+00:00
+[2023-11-24T18:35:23.993+0000] {standard_task_runner.py:57} INFO - Started process 1004 to run task
+[2023-11-24T18:35:23.996+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'COVID-19', 'Data_transform_and_load', 'manual__2023-11-22T19:29:07.263785+00:00', '--job-id', '87', '--raw', '--subdir', 'DAGS_FOLDER/dag_etl.py', '--cfg-path', '/tmp/tmp1akpnpy4']
+[2023-11-24T18:35:23.999+0000] {standard_task_runner.py:85} INFO - Job 87: Subtask Data_transform_and_load
+[2023-11-24T18:35:24.051+0000] {task_command.py:416} INFO - Running <TaskInstance: COVID-19.Data_transform_and_load manual__2023-11-22T19:29:07.263785+00:00 [running]> on host 3742b108fdc7
+[2023-11-24T18:35:24.318+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='COVID-19' AIRFLOW_CTX_TASK_ID='Data_transform_and_load' AIRFLOW_CTX_EXECUTION_DATE='2023-11-22T19:29:07.263785+00:00' AIRFLOW_CTX_TRY_NUMBER='11' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-11-22T19:29:07.263785+00:00'
+[2023-11-24T18:35:24.660+0000] {base.py:73} INFO - Using connection ID 'postgres_connexion' for task execution.
+[2023-11-24T18:35:25.000+0000] {warnings.py:109} WARNING - /opt/***/dags/dag_etl.py:97: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  df_hospit['nbre_hospit_corona'] = df_hospit['nbre_hospit_corona'].fillna(0).astype(int)
+
+[2023-11-24T18:35:25.015+0000] {warnings.py:109} WARNING - /opt/***/dags/dag_etl.py:98: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  df_hospit['nbre_hospit_corona_h'] = df_hospit['nbre_hospit_corona_h'].fillna(0).astype(int)
+
+[2023-11-24T18:35:25.032+0000] {warnings.py:109} WARNING - /opt/***/dags/dag_etl.py:99: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  df_hospit['nbre_hospit_corona_f'] = df_hospit['nbre_hospit_corona_f'].fillna(0).astype(int)
+
+[2023-11-24T18:35:25.033+0000] {logging_mixin.py:151} INFO - nbre_hospit_corona      int64
+nbre_hospit_corona_h    int64
+nbre_hospit_corona_f    int64
+dtype: object
+[2023-11-24T18:35:25.041+0000] {base.py:73} INFO - Using connection ID 'postgres_connexion' for task execution.
+[2023-11-24T18:35:25.063+0000] {taskinstance.py:1937} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 192, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 209, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/dag_etl.py", line 108, in data_transform_and_load
+    cursor.execute("INSERT INTO passage (nombre_hospitalisation_corona, nombre_hospitalisation_corona_h, nombre_hospitalisation_corona_f) VALUES (%s, %s, %s) ON CONFLICT (id_hospitalisation) DO NOTHING",
+psycopg2.errors.UndefinedColumn: column "nombre_hospitalisation_corona" of relation "passage" does not exist
+LINE 1: INSERT INTO passage (nombre_hospitalisation_corona, nombre_h...
+                             ^
+
+[2023-11-24T18:35:25.073+0000] {taskinstance.py:1400} INFO - Marking task as FAILED. dag_id=COVID-19, task_id=Data_transform_and_load, execution_date=20231122T192907, start_date=20231124T183523, end_date=20231124T183525
+[2023-11-24T18:35:25.091+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 87 for task Data_transform_and_load (column "nombre_hospitalisation_corona" of relation "passage" does not exist
+LINE 1: INSERT INTO passage (nombre_hospitalisation_corona, nombre_h...
+                             ^
+; 1004)
+[2023-11-24T18:35:25.134+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2023-11-24T18:35:25.156+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check

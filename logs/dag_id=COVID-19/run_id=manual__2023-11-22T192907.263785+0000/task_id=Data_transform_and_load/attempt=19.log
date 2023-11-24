@@ -1,0 +1,136 @@
+[2023-11-24T19:47:53.576+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: COVID-19.Data_transform_and_load manual__2023-11-22T19:29:07.263785+00:00 [queued]>
+[2023-11-24T19:47:53.587+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: COVID-19.Data_transform_and_load manual__2023-11-22T19:29:07.263785+00:00 [queued]>
+[2023-11-24T19:47:53.589+0000] {taskinstance.py:1361} INFO - Starting attempt 19 of 19
+[2023-11-24T19:47:53.605+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): Data_transform_and_load> on 2023-11-22 19:29:07.263785+00:00
+[2023-11-24T19:47:53.611+0000] {standard_task_runner.py:57} INFO - Started process 2125 to run task
+[2023-11-24T19:47:53.614+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'COVID-19', 'Data_transform_and_load', 'manual__2023-11-22T19:29:07.263785+00:00', '--job-id', '97', '--raw', '--subdir', 'DAGS_FOLDER/dag_etl.py', '--cfg-path', '/tmp/tmpptueo6si']
+[2023-11-24T19:47:53.616+0000] {standard_task_runner.py:85} INFO - Job 97: Subtask Data_transform_and_load
+[2023-11-24T19:47:53.669+0000] {task_command.py:416} INFO - Running <TaskInstance: COVID-19.Data_transform_and_load manual__2023-11-22T19:29:07.263785+00:00 [running]> on host 3742b108fdc7
+[2023-11-24T19:47:53.942+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='COVID-19' AIRFLOW_CTX_TASK_ID='Data_transform_and_load' AIRFLOW_CTX_EXECUTION_DATE='2023-11-22T19:29:07.263785+00:00' AIRFLOW_CTX_TRY_NUMBER='19' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-11-22T19:29:07.263785+00:00'
+[2023-11-24T19:47:54.209+0000] {logging_mixin.py:151} INFO - dep                      object
+date_de_passage          object
+sursaud_cl_age_corona    object
+nbre_pass_corona         object
+nbre_pass_tot            object
+nbre_hospit_corona       object
+nbre_pass_corona_h       object
+nbre_pass_corona_f       object
+nbre_pass_tot_h          object
+nbre_pass_tot_f          object
+nbre_hospit_corona_h     object
+nbre_hospit_corona_f     object
+nbre_acte_corona         object
+nbre_acte_tot            object
+nbre_acte_corona_h       object
+nbre_acte_corona_f       object
+nbre_acte_tot_h          object
+nbre_acte_tot_f          object
+dtype: object
+[2023-11-24T19:47:54.227+0000] {logging_mixin.py:151} INFO -         dep date_de_passage  ... nbre_acte_tot_h nbre_acte_tot_f
+0        01      2022-12-26  ...             NaN             NaN
+1        01      2022-12-26  ...             NaN             NaN
+2        01      2022-12-26  ...             NaN             NaN
+3        01      2022-12-26  ...             NaN             NaN
+4        01      2022-12-26  ...             NaN             NaN
+...     ...             ...  ...             ...             ...
+214216  976      2023-10-24  ...             NaN             NaN
+214217  976      2023-10-24  ...             NaN             NaN
+214218  976      2023-10-24  ...             NaN             NaN
+214219  976      2023-10-24  ...             NaN             NaN
+214220  976      2023-10-24  ...             NaN             NaN
+
+[214221 rows x 18 columns]
+[2023-11-24T19:47:54.354+0000] {warnings.py:109} WARNING - /opt/***/dags/dag_etl.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  df_passage['nbre_pass_corona'] = df_passage['nbre_pass_corona'].fillna(0).astype(int)
+
+[2023-11-24T19:47:54.380+0000] {warnings.py:109} WARNING - /opt/***/dags/dag_etl.py:72: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  df_passage['nbre_pass_tot'] = df_passage['nbre_pass_tot'].fillna(0).astype(int)
+
+[2023-11-24T19:47:54.396+0000] {warnings.py:109} WARNING - /opt/***/dags/dag_etl.py:73: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  df_passage['nbre_pass_corona_h'] = df_passage['nbre_pass_corona_h'].fillna(0).astype(int)
+
+[2023-11-24T19:47:54.411+0000] {warnings.py:109} WARNING - /opt/***/dags/dag_etl.py:74: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  df_passage['nbre_pass_corona_f'] = df_passage['nbre_pass_corona_f'].fillna(0).astype(int)
+
+[2023-11-24T19:47:54.426+0000] {warnings.py:109} WARNING - /opt/***/dags/dag_etl.py:75: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  df_passage['nbre_pass_tot_h'] = df_passage['nbre_pass_tot_h'].fillna(0).astype(int)
+
+[2023-11-24T19:47:54.443+0000] {warnings.py:109} WARNING - /opt/***/dags/dag_etl.py:76: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  df_passage['nbre_pass_tot_f'] = df_passage['nbre_pass_tot_f'].fillna(0).astype(int)
+
+[2023-11-24T19:47:54.475+0000] {warnings.py:109} WARNING - /opt/***/dags/dag_etl.py:83: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  df_hospit['nbre_hospit_corona'] = df_hospit['nbre_hospit_corona'].fillna(0).astype(int)
+
+[2023-11-24T19:47:54.491+0000] {warnings.py:109} WARNING - /opt/***/dags/dag_etl.py:84: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  df_hospit['nbre_hospit_corona_h'] = df_hospit['nbre_hospit_corona_h'].fillna(0).astype(int)
+
+[2023-11-24T19:47:54.507+0000] {warnings.py:109} WARNING - /opt/***/dags/dag_etl.py:85: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  df_hospit['nbre_hospit_corona_f'] = df_hospit['nbre_hospit_corona_f'].fillna(0).astype(int)
+
+[2023-11-24T19:47:54.518+0000] {base.py:73} INFO - Using connection ID 'postgres_connexion' for task execution.
+[2023-11-24T19:47:55.234+0000] {taskinstance.py:1937} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/pandas/core/indexes/base.py", line 3653, in get_loc
+    return self._engine.get_loc(casted_key)
+  File "pandas/_libs/index.pyx", line 147, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 176, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7080, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7088, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'num_departement'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 192, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 209, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/dag_etl.py", line 104, in data_transform_and_load
+    (row['num_departement'], row['nom_departement'], row['nom_region']))
+  File "/home/airflow/.local/lib/python3.8/site-packages/pandas/core/series.py", line 1007, in __getitem__
+    return self._get_value(key)
+  File "/home/airflow/.local/lib/python3.8/site-packages/pandas/core/series.py", line 1116, in _get_value
+    loc = self.index.get_loc(label)
+  File "/home/airflow/.local/lib/python3.8/site-packages/pandas/core/indexes/base.py", line 3655, in get_loc
+    raise KeyError(key) from err
+KeyError: 'num_departement'
+[2023-11-24T19:47:55.261+0000] {taskinstance.py:1400} INFO - Marking task as FAILED. dag_id=COVID-19, task_id=Data_transform_and_load, execution_date=20231122T192907, start_date=20231124T194753, end_date=20231124T194755
+[2023-11-24T19:47:55.281+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 97 for task Data_transform_and_load ('num_departement'; 2125)
+[2023-11-24T19:47:55.315+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2023-11-24T19:47:55.334+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check

@@ -1,0 +1,141 @@
+[2023-11-24T10:52:20.269+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: COVID-19.Create_table manual__2023-11-22T19:29:07.263785+00:00 [queued]>
+[2023-11-24T10:52:20.286+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: COVID-19.Create_table manual__2023-11-22T19:29:07.263785+00:00 [queued]>
+[2023-11-24T10:52:20.287+0000] {taskinstance.py:1361} INFO - Starting attempt 3 of 3
+[2023-11-24T10:52:20.308+0000] {taskinstance.py:1382} INFO - Executing <Task(PostgresOperator): Create_table> on 2023-11-22 19:29:07.263785+00:00
+[2023-11-24T10:52:20.315+0000] {standard_task_runner.py:57} INFO - Started process 212 to run task
+[2023-11-24T10:52:20.319+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'COVID-19', 'Create_table', 'manual__2023-11-22T19:29:07.263785+00:00', '--job-id', '70', '--raw', '--subdir', 'DAGS_FOLDER/dag_etl.py', '--cfg-path', '/tmp/tmpl1qyljph']
+[2023-11-24T10:52:20.322+0000] {standard_task_runner.py:85} INFO - Job 70: Subtask Create_table
+[2023-11-24T10:52:20.386+0000] {task_command.py:416} INFO - Running <TaskInstance: COVID-19.Create_table manual__2023-11-22T19:29:07.263785+00:00 [running]> on host b1356228354b
+[2023-11-24T10:52:20.694+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='COVID-19' AIRFLOW_CTX_TASK_ID='Create_table' AIRFLOW_CTX_EXECUTION_DATE='2023-11-22T19:29:07.263785+00:00' AIRFLOW_CTX_TRY_NUMBER='3' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-11-22T19:29:07.263785+00:00'
+[2023-11-24T10:52:20.696+0000] {sql.py:274} INFO - Executing: -- Table des dimensions
+CREATE TABLE IF NOT EXISTS Departement (
+    num_departement VARCHAR(255) NOT NULL,
+    nom_departement VARCHAR(255) NOT NULL,
+    nom_region VARCHAR(255) NOT NULL,
+    PRIMARY KEY (num_departement)
+);
+
+CREATE TABLE IF NOT EXISTS Passage (
+    id_passage SERIAL,
+    nombre_passage_corona INT,
+    nombre_passage_total INT,
+    nombre_passage_corona_h INT,
+    nombre_passage_corona_f INT,
+    nombre_passage_total_h INT,
+    nombre_passage_total_f INT,
+    PRIMARY KEY (id_passage)
+);
+
+CREATE TABLE IF NOT EXISTS Hospitalisation (
+    id_hospitalisation SERIAL,
+    nombre_hospitalisation_corona INT,
+    nombre_hospitalisation_corona_h INT,
+    nombre_hospitalisation_corona_f INT,
+    PRIMARY KEY (id_hospitalisation)
+);
+
+CREATE TABLE IF NOT EXISTS Age (
+    id_age SERIAL,
+    tranche_age VARCHAR(255) NOT NULL,
+    PRIMARY KEY (id_age)
+);
+
+-- Table des faits
+CREATE TABLE IF NOT EXISTS Urgence_covid (
+    id_urgence_covid SERIAL,
+    date_de_passage DATE,
+    id_hospitalisation INT,
+    id_passage INT,
+    id_age INT,
+    num_departement VARCHAR(255),
+    PRIMARY KEY (id_urgence_covid),
+    FOREIGN KEY (id_hospitalisation) REFERENCES Hospitalisation(id_hospitalisation),
+    FOREIGN KEY (id_passage) REFERENCES Passage(id_passage),
+    FOREIGN KEY (id_age) REFERENCES Age(id_age),
+    FOREIGN KEY (num_departement) REFERENCES Departement(num_departement)
+);
+
+-- INSERT INTO Age VALUES (0, "tous âges");
+-- INSERT INTO Age VALUES (1, "0-4 ans");
+-- INSERT INTO Age VALUES (2, "5-14 ans");
+-- INSERT INTO Age VALUES (3, "15-44 ans");
+-- INSERT INTO Age VALUES (4, "45-64 ans");
+-- INSERT INTO Age VALUES (5, "65-74 ans");
+-- INSERT INTO Age VALUES (6, "75 ans et plus");
+
+INSERT INTO Age (id_age, tranche_age) VALUES (0, 'tous âges') ON CONFLICT (id_age) DO NOTHING;
+INSERT INTO Age (id_age, tranche_age) VALUES (1, '0-4 ans') ON CONFLICT (id_age) DO NOTHING;
+INSERT INTO Age (id_age, tranche_age) VALUES (2, '5-14 ans') ON CONFLICT (id_age) DO NOTHING;
+INSERT INTO Age (id_age, tranche_age) VALUES (3, '15-44 ans') ON CONFLICT (id_age) DO NOTHING;
+INSERT INTO Age (id_age, tranche_age) VALUES (4, '45-64 ans') ON CONFLICT (id_age) DO NOTHING;
+INSERT INTO Age (id_age, tranche_age) VALUES (5, '65-74 ans') ON CONFLICT (id_age) DO NOTHING;
+INSERT INTO Age (id_age, tranche_age) VALUES (6, '75 ans et plus') ON CONFLICT (id_age) DO NOTHING;
+[2023-11-24T10:52:20.710+0000] {base.py:73} INFO - Using connection ID 'postgres_connexion' for task execution.
+[2023-11-24T10:52:20.734+0000] {base.py:73} INFO - Using connection ID 'postgres_connexion' for task execution.
+[2023-11-24T10:52:20.759+0000] {sql.py:418} INFO - Running statement: -- Table des dimensions
+CREATE TABLE IF NOT EXISTS Departement (
+    num_departement VARCHAR(255) NOT NULL,
+    nom_departement VARCHAR(255) NOT NULL,
+    nom_region VARCHAR(255) NOT NULL,
+    PRIMARY KEY (num_departement)
+);
+
+CREATE TABLE IF NOT EXISTS Passage (
+    id_passage SERIAL,
+    nombre_passage_corona INT,
+    nombre_passage_total INT,
+    nombre_passage_corona_h INT,
+    nombre_passage_corona_f INT,
+    nombre_passage_total_h INT,
+    nombre_passage_total_f INT,
+    PRIMARY KEY (id_passage)
+);
+
+CREATE TABLE IF NOT EXISTS Hospitalisation (
+    id_hospitalisation SERIAL,
+    nombre_hospitalisation_corona INT,
+    nombre_hospitalisation_corona_h INT,
+    nombre_hospitalisation_corona_f INT,
+    PRIMARY KEY (id_hospitalisation)
+);
+
+CREATE TABLE IF NOT EXISTS Age (
+    id_age SERIAL,
+    tranche_age VARCHAR(255) NOT NULL,
+    PRIMARY KEY (id_age)
+);
+
+-- Table des faits
+CREATE TABLE IF NOT EXISTS Urgence_covid (
+    id_urgence_covid SERIAL,
+    date_de_passage DATE,
+    id_hospitalisation INT,
+    id_passage INT,
+    id_age INT,
+    num_departement VARCHAR(255),
+    PRIMARY KEY (id_urgence_covid),
+    FOREIGN KEY (id_hospitalisation) REFERENCES Hospitalisation(id_hospitalisation),
+    FOREIGN KEY (id_passage) REFERENCES Passage(id_passage),
+    FOREIGN KEY (id_age) REFERENCES Age(id_age),
+    FOREIGN KEY (num_departement) REFERENCES Departement(num_departement)
+);
+
+-- INSERT INTO Age VALUES (0, "tous âges");
+-- INSERT INTO Age VALUES (1, "0-4 ans");
+-- INSERT INTO Age VALUES (2, "5-14 ans");
+-- INSERT INTO Age VALUES (3, "15-44 ans");
+-- INSERT INTO Age VALUES (4, "45-64 ans");
+-- INSERT INTO Age VALUES (5, "65-74 ans");
+-- INSERT INTO Age VALUES (6, "75 ans et plus");
+
+INSERT INTO Age (id_age, tranche_age) VALUES (0, 'tous âges') ON CONFLICT (id_age) DO NOTHING;
+INSERT INTO Age (id_age, tranche_age) VALUES (1, '0-4 ans') ON CONFLICT (id_age) DO NOTHING;
+INSERT INTO Age (id_age, tranche_age) VALUES (2, '5-14 ans') ON CONFLICT (id_age) DO NOTHING;
+INSERT INTO Age (id_age, tranche_age) VALUES (3, '15-44 ans') ON CONFLICT (id_age) DO NOTHING;
+INSERT INTO Age (id_age, tranche_age) VALUES (4, '45-64 ans') ON CONFLICT (id_age) DO NOTHING;
+INSERT INTO Age (id_age, tranche_age) VALUES (5, '65-74 ans') ON CONFLICT (id_age) DO NOTHING;
+INSERT INTO Age (id_age, tranche_age) VALUES (6, '75 ans et plus') ON CONFLICT (id_age) DO NOTHING;, parameters: None
+[2023-11-24T10:52:20.768+0000] {sql.py:427} INFO - Rows affected: 0
+[2023-11-24T10:52:20.786+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=COVID-19, task_id=Create_table, execution_date=20231122T192907, start_date=20231124T105220, end_date=20231124T105220
+[2023-11-24T10:52:20.854+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2023-11-24T10:52:20.880+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check

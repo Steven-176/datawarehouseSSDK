@@ -1,0 +1,29 @@
+[2023-11-24T10:45:15.620+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: COVID-19.Data_transform_and_load manual__2023-11-22T19:29:07.263785+00:00 [queued]>
+[2023-11-24T10:45:15.654+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: COVID-19.Data_transform_and_load manual__2023-11-22T19:29:07.263785+00:00 [queued]>
+[2023-11-24T10:45:15.655+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 1
+[2023-11-24T10:45:15.676+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): Data_transform_and_load> on 2023-11-22 19:29:07.263785+00:00
+[2023-11-24T10:45:15.685+0000] {standard_task_runner.py:57} INFO - Started process 96 to run task
+[2023-11-24T10:45:15.690+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'COVID-19', 'Data_transform_and_load', 'manual__2023-11-22T19:29:07.263785+00:00', '--job-id', '66', '--raw', '--subdir', 'DAGS_FOLDER/dag_etl.py', '--cfg-path', '/tmp/tmpz4401zzv']
+[2023-11-24T10:45:15.696+0000] {standard_task_runner.py:85} INFO - Job 66: Subtask Data_transform_and_load
+[2023-11-24T10:45:15.768+0000] {task_command.py:416} INFO - Running <TaskInstance: COVID-19.Data_transform_and_load manual__2023-11-22T19:29:07.263785+00:00 [running]> on host b1356228354b
+[2023-11-24T10:45:16.165+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='COVID-19' AIRFLOW_CTX_TASK_ID='Data_transform_and_load' AIRFLOW_CTX_EXECUTION_DATE='2023-11-22T19:29:07.263785+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-11-22T19:29:07.263785+00:00'
+[2023-11-24T10:45:16.754+0000] {base.py:73} INFO - Using connection ID 'postgres_connexion' for task execution.
+[2023-11-24T10:45:16.931+0000] {taskinstance.py:1937} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 192, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 209, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/dag_etl.py", line 63, in data_transform_and_load
+    cursor.execute("INSERT INTO departement (num_departement, nom_departement, nom_region) VALUES (%s, %s, %s) ON CONFLICT (num_departement) DO NOTHING",
+psycopg2.errors.InvalidTextRepresentation: invalid input syntax for type integer: "2A"
+LINE 1: ...departement, nom_departement, nom_region) VALUES ('2A', 'Cor...
+                                                             ^
+
+[2023-11-24T10:45:16.953+0000] {taskinstance.py:1400} INFO - Marking task as FAILED. dag_id=COVID-19, task_id=Data_transform_and_load, execution_date=20231122T192907, start_date=20231124T104515, end_date=20231124T104516
+[2023-11-24T10:45:16.973+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 66 for task Data_transform_and_load (invalid input syntax for type integer: "2A"
+LINE 1: ...departement, nom_departement, nom_region) VALUES ('2A', 'Cor...
+                                                             ^
+; 96)
+[2023-11-24T10:45:16.991+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2023-11-24T10:45:17.016+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check

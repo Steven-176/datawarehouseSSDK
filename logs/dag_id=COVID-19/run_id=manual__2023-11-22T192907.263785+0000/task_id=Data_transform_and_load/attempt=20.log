@@ -1,0 +1,47 @@
+[2023-11-24T19:53:03.953+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: COVID-19.Data_transform_and_load manual__2023-11-22T19:29:07.263785+00:00 [queued]>
+[2023-11-24T19:53:03.965+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: COVID-19.Data_transform_and_load manual__2023-11-22T19:29:07.263785+00:00 [queued]>
+[2023-11-24T19:53:03.966+0000] {taskinstance.py:1361} INFO - Starting attempt 20 of 20
+[2023-11-24T19:53:03.982+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): Data_transform_and_load> on 2023-11-22 19:29:07.263785+00:00
+[2023-11-24T19:53:03.988+0000] {standard_task_runner.py:57} INFO - Started process 2208 to run task
+[2023-11-24T19:53:03.991+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'COVID-19', 'Data_transform_and_load', 'manual__2023-11-22T19:29:07.263785+00:00', '--job-id', '98', '--raw', '--subdir', 'DAGS_FOLDER/dag_etl.py', '--cfg-path', '/tmp/tmpx5nb499w']
+[2023-11-24T19:53:03.994+0000] {standard_task_runner.py:85} INFO - Job 98: Subtask Data_transform_and_load
+[2023-11-24T19:53:04.055+0000] {task_command.py:416} INFO - Running <TaskInstance: COVID-19.Data_transform_and_load manual__2023-11-22T19:29:07.263785+00:00 [running]> on host 3742b108fdc7
+[2023-11-24T19:53:04.324+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='COVID-19' AIRFLOW_CTX_TASK_ID='Data_transform_and_load' AIRFLOW_CTX_EXECUTION_DATE='2023-11-22T19:29:07.263785+00:00' AIRFLOW_CTX_TRY_NUMBER='20' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-11-22T19:29:07.263785+00:00'
+[2023-11-24T19:53:04.627+0000] {logging_mixin.py:151} INFO - dep                      object
+date_de_passage          object
+sursaud_cl_age_corona    object
+nbre_pass_corona         object
+nbre_pass_tot            object
+nbre_hospit_corona       object
+nbre_pass_corona_h       object
+nbre_pass_corona_f       object
+nbre_pass_tot_h          object
+nbre_pass_tot_f          object
+nbre_hospit_corona_h     object
+nbre_hospit_corona_f     object
+nbre_acte_corona         object
+nbre_acte_tot            object
+nbre_acte_corona_h       object
+nbre_acte_corona_f       object
+nbre_acte_tot_h          object
+nbre_acte_tot_f          object
+dtype: object
+[2023-11-24T19:53:04.645+0000] {logging_mixin.py:151} INFO -         dep date_de_passage  ... nbre_acte_tot_h nbre_acte_tot_f
+0        01      2022-12-26  ...             NaN             NaN
+1        01      2022-12-26  ...             NaN             NaN
+2        01      2022-12-26  ...             NaN             NaN
+3        01      2022-12-26  ...             NaN             NaN
+4        01      2022-12-26  ...             NaN             NaN
+...     ...             ...  ...             ...             ...
+214216  976      2023-10-24  ...             NaN             NaN
+214217  976      2023-10-24  ...             NaN             NaN
+214218  976      2023-10-24  ...             NaN             NaN
+214219  976      2023-10-24  ...             NaN             NaN
+214220  976      2023-10-24  ...             NaN             NaN
+
+[214221 rows x 18 columns]
+[2023-11-24T19:53:04.893+0000] {base.py:73} INFO - Using connection ID 'postgres_connexion' for task execution.
+[2023-11-24T20:23:40.537+0000] {python.py:194} INFO - Done. Returned value was: Data inserted successfully
+[2023-11-24T20:23:40.585+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=COVID-19, task_id=Data_transform_and_load, execution_date=20231122T192907, start_date=20231124T195303, end_date=20231124T202340
+[2023-11-24T20:23:40.623+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2023-11-24T20:23:40.848+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check
