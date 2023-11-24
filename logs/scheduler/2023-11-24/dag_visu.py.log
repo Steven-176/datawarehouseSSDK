@@ -741,3 +741,10 @@ NameError: name 'dag_analyse_covid_femmes' is not defined
 [2023-11-24T22:56:44.356+0000] {logging_mixin.py:151} INFO - [2023-11-24T22:56:44.356+0000] {dag.py:2941} INFO - Sync 1 DAGs
 [2023-11-24T22:56:44.371+0000] {logging_mixin.py:151} INFO - [2023-11-24T22:56:44.370+0000] {dag.py:3722} INFO - Setting next_dagrun for analyse_covid19 to None, run_after=None
 [2023-11-24T22:56:44.413+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/dag_visu.py took 0.158 seconds
+[2023-11-24T22:57:14.720+0000] {processor.py:157} INFO - Started process (PID=5950) to work on /opt/airflow/dags/dag_visu.py
+[2023-11-24T22:57:14.721+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/dag_visu.py for tasks to queue
+[2023-11-24T22:57:14.722+0000] {logging_mixin.py:151} INFO - [2023-11-24T22:57:14.722+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/dag_visu.py
+[2023-11-24T22:57:14.762+0000] {processor.py:839} INFO - DAG(s) dict_keys(['analyse_covid19']) retrieved from /opt/airflow/dags/dag_visu.py
+[2023-11-24T22:57:14.793+0000] {logging_mixin.py:151} INFO - [2023-11-24T22:57:14.793+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2023-11-24T22:57:14.807+0000] {logging_mixin.py:151} INFO - [2023-11-24T22:57:14.807+0000] {dag.py:3722} INFO - Setting next_dagrun for analyse_covid19 to None, run_after=None
+[2023-11-24T22:57:14.836+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/dag_visu.py took 0.119 seconds
